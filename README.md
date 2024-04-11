@@ -9,18 +9,18 @@
 
 | Requisito | Sprint |
 | :----------------------------------|:--:|
-|**1.Tela de Login**|  |
-|**2.Tela de criar projetos**|  |
-|**3.Consultas usando SQL (inserir, listar, excluir e atualizar registros das tabelas)**|  |
-|**4.Cadastrar editor e revisor**|  |
-|**5.Carregar o limite de um novo projeto (carregar o limite do projeto)**|  |
-|**6.Carregar a grade de retângulos de um novo projeto**|  |
-|**7.Gerenciamento de perfis, somente o usuário gestor poderá acessar os dados**|  |
-|**8.Utilização de middleware para validar as rotas**|  |
-|**9.Exportar relatório de estatística em PDF**|  |
-|**10.Consultas SQL para filtrar por editor**|  |
-|**11.MVP**|  |
-|**12.Tela de Cadastro de Usuário**|  |
+|**1.Tela de Login**| 1 |
+|**2.Tela de criar projetos**| 2 |
+|**3.Consultas usando SQL (inserir, listar, excluir e atualizar registros das tabelas)**| 1 |
+|**4.Cadastrar editor e revisor**| 1 |
+|**5.Carregar o limite de um novo projeto (carregar o limite do projeto)**| 1 |
+|**6.Carregar a grade de retângulos de um novo projeto**| 2 |
+|**7.Gerenciamento de perfis, somente o usuário gestor poderá acessar os dados**| 2 |
+|**8.Utilização de middleware para validar as rotas**| 3 |
+|**9.Exportar relatório de estatística em PDF**| 2 |
+|**10.Consultas SQL para filtrar por editor**| 2 |
+|**11.MVP**| 1,2,3 |
+|**12.Tela de Cadastro de Usuário**| 2 |
 
 
 ##  🎯 Entregas
