@@ -1,8 +1,11 @@
 <h1>The Code</h1>
 <h2>Fatec Professor Francisco Moura, Jacareí - 2º Semestre DSM 2024</h2>
-<h4>Objetivo:</h4>
+<h3>Objetivo do projeto:</h3>
 <p>Desenvolver um sistema web, com o objetivo de administrar projetos de mapeamento.</p>
-
+<h3>Sobre o projeto:</h3>
+<p>Projeto desenvolvido por alunos do 2º semestre do curso de Desenvolvimento de Software Multiplatafora, FATEC Professor Francisco Moura em Jacareí.
+Consiste na criação de um sistema web, para manipulação de projetos de mapeamento. Desenvolvido em Typescript com banco de dados em PostgreSQL.
+  
 ###   Backlogs
 #### Backlog do produto
 <span align="center"></span>
@@ -49,6 +52,39 @@
 |**12.Tela de Cadastro de Usuário**|**"Como administrador, eu quero  cadastrar novos usuários, para ter acesso ao sistema"**|
 
 
+#### Backlog da Sprint
+<span align="center"></span>
+
+### Sprint 1
+| Item | Funcionalidade |
+| :----------------------------------|:--:|
+| 1 |**WireFrame do produto**|
+| 2 | **Tela de Login** |
+| 3 |**Consultas usando SQL (inserir, listar, excluir e atualizar registros das tabelas)** |
+| 4 | **Cadastrar editor e revisor** |
+| 5 | **Carregar o limite de um novo projeto (carregar o limite do projeto)** |
+| 6 | **MVP** |
+
+
+### Tarefas na Sprint 
+
+|   Tarefas  |         Story Point         |
+|:-------------------------:|:-----:|
+| **Pesquisa de conteúdo**| 02 |
+| **WireFrame no Figma**| 05 |
+|**Planning Poker**| 01 |
+| **Trello** | 04 |
+| **Tela de login**| 04 |
+| **Consultas usando SQL**| 04 |
+| **Cadastrar editor e revisor**| 05 |
+| **Carregar o limite de um novo projeto**| 05 |
+| **MVP**| 03 |
+| **Documentação no GitHub** | 05 |
+| **Backlog** | 05 |
+| **Fazer a apresentação** | 02 |
+|||
+|   **Total Story Point** | 34|
+<br>
 <span id="equipe"></span>
 
 ## Equipe
