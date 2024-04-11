@@ -47,3 +47,16 @@
 |**10.Consultas SQL para filtrar por editor**|**"Como administrador, eu quero filtrar consultas SQL por editor, para possuir melhor visualização e controle ao acessar o banco de dados"**|
 |**11.MVP**|**"Como administrador, eu quero ter uma visão de como o produto vai ser, para saber como o produto vai funcionar"**|
 |**12.Tela de Cadastro de Usuário**|**"Como administrador, eu quero  cadastrar novos usuários, para ter acesso ao sistema"**|
+
+
+<span id="equipe"></span>
+
+## Equipe
+
+|    Função   |  Nome    |    GitHub     |
+| :----------: | :-----------------------|:------------------------------------------: |
+|   Product Owner| Vitor Cezar de Souza|[GitHub](https://github.com/vooshybee)|
+|   Scrum Master| Ana Júlia Tette Lopes Afonso |[GitHub](https://github.com/AnaBarbancho)|
+|   Dev Team|  Paulo Alexandre Bueno|[Github](https://github.com/pauloabueno23)|
+|   Dev Team| Edlaine de Paula Souza |[GitHub](https://github.com/edlaine-souza)|
+|   Dev Team|  Marcelly Cristini Santos de Souza|[GitHub](https://github.com/Marcelly-cris)|
