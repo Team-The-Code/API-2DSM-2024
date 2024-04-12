@@ -38,18 +38,18 @@ Consiste na criação de um sistema web, para manipulação de projetos de mapea
 
 |**Requistos**|**User Story**|
 |:----------------:|:-------------------------------------:|
-|**1.Tela de Login**|**"Como administrador, eu quero cadastrar meus funcionários para acessar o sistema.**|
-|**2.Tela de criar projetos**|**"Como administrador, eu quero criar novos projetos e gerenciá-los, para realizar atividades"**|
-|**3.Consultas usando SQL (inserir, listar, excluir e atualizar registros das tabelas)**|**"Como administrador, eu quero modificar informações de usuário para alterar informações de usuários;"**|
-|**4.Cadastrar editor e revisor**|**"Como administrador, eu quero cadastrar editor e revisor, para controlar e revisar meu trabalho"**|
-|**5.Carregar o limite de um novo projeto (carregar o limite do projeto)**|**"Como administrador, eu quero possuir a habilidade de carregar um limite de projeto para limitar um novo projeto"**|
-|**6.Carregar a grade de retângulos de um novo projeto**|**""Como administrador, eu quero carregar a grade de retângulos, para saber como está a delimitação de um projeto""**|
+|**1.Tela de Login**|**"Como gestor, eu quero cadastrar meus funcionários para acessar o sistema.**|
+|**2.Tela de criar projetos**|**"Como gestor, eu quero criar novos projetos e gerenciá-los, para realizar atividades"**|
+|**3.Consultas usando SQL (inserir, listar, excluir e atualizar registros das tabelas)**|**"Como gestor, eu quero modificar informações de usuário para alterar informações de usuários;"**|
+|**4.Cadastrar editor e revisor**|**"Como gestor, eu quero cadastrar editor e revisor, para controlar e revisar meu trabalho"**|
+|**5.Carregar o limite de um novo projeto (carregar o limite do projeto)**|**"Como gestor, eu quero possuir a habilidade de carregar um limite de projeto para limitar um novo projeto"**|
+|**6.Carregar a grade de retângulos de um novo projeto**|**""Como gestor, eu quero carregar a grade de retângulos, para saber como está a delimitação de um projeto""**|
 |**7.Gerenciamento de perfis, somente o usuário gestor poderá acessar os dados**|**"Como gestor,eu quero gerenciar os perfis dos meus funcionários, para acessar os dados do andamento dos serviços"**|
-|**8.Utilização de middleware para validar as rotas**|**"Como administrador, eu quero validar rotas em nuvem com mais eficiência, para ter mais controle e velocidade nas rotas de serviço"**|
-|**9.Exportar relatório de estatística em PDF**|**"Como administrador,eu quero conseguir exportar relatórios em PDF, para poder salvá-los, mandá-los, armazená-los e enviá-los para meus trabalhadores"**|
-|**10.Consultas SQL para filtrar por editor**|**"Como administrador, eu quero filtrar consultas SQL por editor, para possuir melhor visualização e controle ao acessar o banco de dados"**|
-|**11.MVP**|**"Como administrador, eu quero ter uma visão de como o produto vai ser, para saber como o produto vai funcionar"**|
-|**12.Tela de Cadastro de Usuário**|**"Como administrador, eu quero  cadastrar novos usuários, para ter acesso ao sistema"**|
+|**8.Utilização de middleware para validar as rotas**|**"Como gestor, eu quero validar rotas em nuvem com mais eficiência, para ter mais controle e velocidade nas rotas de serviço"**|
+|**9.Exportar relatório de estatística em PDF**|**"Como gestor,eu quero conseguir exportar relatórios em PDF, para poder salvá-los, mandá-los, armazená-los e enviá-los para meus trabalhadores"**|
+|**10.Consultas SQL para filtrar por editor**|**"Como gestor, eu quero filtrar consultas SQL por editor, para possuir melhor visualização e controle ao acessar o banco de dados"**|
+|**11.MVP**|**"Como gestor, eu quero ter uma visão de como o produto vai ser, para saber como o produto vai funcionar"**|
+|**12.Tela de Cadastro de Usuário**|**"Como gestor, eu quero  cadastrar novos usuários, para ter acesso ao sistema"**|
 
 
 #### Backlog da Sprint
