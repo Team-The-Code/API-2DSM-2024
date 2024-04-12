@@ -16,7 +16,7 @@ Consiste na criação de um sistema web, para manipulação de projetos de mapea
 |**2.Tela de criar projetos**| 2 |
 |**3.Consultas usando SQL (inserir, listar, excluir e atualizar registros das tabelas)**| 1 |
 |**4.Cadastrar editor e revisor**| 1 |
-|**5.Carregar o limite de um novo projeto (carregar o limite do projeto)**| 1 |
+|**5.Carregar o limite de um novo projeto (carregar o limite do projeto)**| 2 |
 |**6.Carregar a grade de retângulos de um novo projeto**| 2 |
 |**7.Gerenciamento de perfis, somente o usuário gestor poderá acessar os dados**| 2 |
 |**8.Utilização de middleware para validar as rotas**| 3 |
@@ -62,8 +62,7 @@ Consiste na criação de um sistema web, para manipulação de projetos de mapea
 | 2 | **Tela de Login** |
 | 3 |**Consultas usando SQL (inserir, listar, excluir e atualizar registros das tabelas)** |
 | 4 | **Cadastrar editor e revisor** |
-| 5 | **Carregar o limite de um novo projeto (carregar o limite do projeto)** |
-| 6 | **MVP** |
+| 5 | **MVP** |
 
 
 ### Tarefas na Sprint 
@@ -73,17 +72,16 @@ Consiste na criação de um sistema web, para manipulação de projetos de mapea
 | **Pesquisa de conteúdo**| 02 |
 | **WireFrame no Figma**| 05 |
 |**Planning Poker**| 01 |
-| **Trello** | 04 |
-| **Tela de login**| 04 |
-| **Consultas usando SQL**| 04 |
+| **Trello** | 03 |
+| **Tela de login**| 05 |
+| **Consultas usando SQL**| 05 |
 | **Cadastrar editor e revisor**| 05 |
-| **Carregar o limite de um novo projeto**| 05 |
 | **MVP**| 03 |
 | **Documentação no GitHub** | 05 |
 | **Backlog** | 05 |
 | **Fazer a apresentação** | 02 |
 |||
-|   **Total Story Point** | 34|
+|   **Total Story Point** | 46|
 <br>
 <span id="equipe"></span>
 
