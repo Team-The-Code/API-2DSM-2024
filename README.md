@@ -5,6 +5,12 @@
 <h3>Sobre o projeto:</h3>
 <p>Projeto desenvolvido por alunos do 2º semestre do curso de Desenvolvimento de Software Multiplatafora, FATEC Professor Francisco Moura em Jacareí.
 Consiste na criação de um sistema web, para manipulação de projetos de mapeamento. Desenvolvido em Typescript com banco de dados em PostgreSQL.
+
+
+## Como executar a aplicação:
+
+* Figma:<a href="">Clique Aqui!</a>
+* Vídeo Sprint 1:<a href="">Clique aqui!</a>
   
 ###   Backlogs
 #### Backlog do produto
