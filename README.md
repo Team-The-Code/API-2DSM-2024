@@ -102,8 +102,8 @@ Consiste na criação de um sistema web, para manipulação de projetos de mapea
 <span id="tecnologias"></span>
 
 ## Tecnologias utilizadas   
-* <img src = "[https://img.shields.io/badge/JavaScript-CED4DA?style=for-the-badge&logo=javaScript&logoColor=007ACC](https://shields.io/badge/TypeScript-3178C6?logo=TypeScript&logoColor=FFF&style=flat-square)" alt ="TypeScript">
-* <img src = "[https://img.shields.io/badge/Jira-CED4DA?style=for-the-badge&logo=jira&logoColor=007ACC](https://shields.io/badge/simple__diarizer-Trello-blue?logo=Trello&style=flat)" alt ="Trello">
+* <img src = "https://shields.io/badge/TypeScript-3178C6?logo=TypeScript&logoColor=FFF&style=flat-square" alt ="TypeScript">
+* <img src = "https://shields.io/badge/simple__diarizer-Trello-blue?logo=Trello&style=flat" alt ="Trello">
 * <img src = "https://img.shields.io/badge/GitHub-CED4DA?style=for-the-badge&logo=github&logoColor=007ACC" alt ="GitHub">
 * <img src = "https://img.shields.io/badge/Figma-CED4DA?style=for-the-badge&logo=figma&logoColor=007ACC" alt ="Figma">
 
