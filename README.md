@@ -86,7 +86,7 @@ Consiste na criação de um sistema web, para manipulação de projetos de mapea
 <span id="equipe"></span>
 
 ## Métrica do Time
-<img src="./docs/burndown.png">
+<img src="./docs/Burndown.png">
 
 ## Equipe
 
