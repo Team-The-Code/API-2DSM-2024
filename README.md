@@ -85,6 +85,9 @@ Consiste na criação de um sistema web, para manipulação de projetos de mapea
 <br>
 <span id="equipe"></span>
 
+## Métrica do Time
+<img src="./docs/burndown.png">
+
 ## Equipe
 
 |    Função   |  Nome    |    GitHub     |
