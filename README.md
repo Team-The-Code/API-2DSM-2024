@@ -11,6 +11,9 @@ Consiste na criação de um sistema web, para manipulação de projetos de mapea
 
 * Figma:<a href="">Clique Aqui!</a>
 * Vídeo Sprint 1:<a href="">Clique aqui!</a>
+
+
+
   
 ###   Backlogs
 #### Backlog do produto
@@ -91,7 +94,7 @@ Consiste na criação de um sistema web, para manipulação de projetos de mapea
 <br>
 <span id="equipe"></span>
 
-## Métrica do Time
+## Burndown
 <img src="./docs/Burndown.png">
 
 ## Equipe
