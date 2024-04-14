@@ -32,7 +32,7 @@ Consiste na criação de um sistema web, para manipulação de projetos de mapea
 |**9.Exportar relatório de estatística em PDF**| 2 |
 |**10.Consultas SQL para filtrar por editor**| 2 |
 |**11.MVP**| 1,2,3 |
-|**12.Tela de Cadastro de Usuário**| 2 |
+|**12.Tela de Cadastro de Usuário**| 1 |
 
 
 ##  🎯 Entregas
@@ -72,6 +72,7 @@ Consiste na criação de um sistema web, para manipulação de projetos de mapea
 | 3 |**Consultas usando SQL (inserir, listar, excluir e atualizar registros das tabelas)** |
 | 4 | **Cadastrar editor e revisor** |
 | 5 | **MVP** |
+| 6 | **Tela de Cadastro de Usuário**|
 
 
 ### Tarefas na Sprint 
@@ -79,18 +80,19 @@ Consiste na criação de um sistema web, para manipulação de projetos de mapea
 |   Tarefas  |         Story Point         |
 |:-------------------------:|:-----:|
 | **Pesquisa de conteúdo**| 02 |
-| **WireFrame no Figma**| 05 |
+| **WireFrame no Figma**| 04 |
 |**Planning Poker**| 01 |
-| **Trello** | 03 |
+| **Trello** | 02 |
 | **Tela de login**| 05 |
 | **Consultas usando SQL**| 05 |
 | **Cadastrar editor e revisor**| 05 |
+| **Tela de Cadastro de usuário**| 05 |
 | **MVP**| 03 |
 | **Documentação no GitHub** | 05 |
 | **Backlog** | 05 |
 | **Fazer a apresentação** | 02 |
 |||
-|   **Total Story Point** | 46|
+|   **Total Story Point** | 44|
 <br>
 <span id="equipe"></span>
 
@@ -102,7 +104,9 @@ Consiste na criação de um sistema web, para manipulação de projetos de mapea
 <span id="tecnologias"></span>
 
 ## Tecnologias utilizadas   
-* <img src = "https://shields.io/badge/TypeScript-3178C6?logo=TypeScript&logoColor=FFF&style=flat-square" alt ="TypeScript">
+* <img src = "https://img.shields.io/badge/TypeScript-007ACC?logo=typescript&logoColor=white&style=for-the-badge" alt ="TypeScript">
+* <img src = "https://img.shields.io/badge/React-20232A?logo=react&logoColor=61DAFB&style=for-the-badge" alt ="React">
+* <img src = "https://img.shields.io/badge/PostgreSQL-316192?logo=postgresql&logoColor=white&style=for-the-badge" alt ="PostgreSQL">
 * <img src = "https://shields.io/badge/simple__diarizer-Trello-blue?logo=Trello&style=flat" alt ="Trello">
 * <img src = "https://img.shields.io/badge/GitHub-CED4DA?style=for-the-badge&logo=github&logoColor=007ACC" alt ="GitHub">
 * <img src = "https://img.shields.io/badge/Figma-CED4DA?style=for-the-badge&logo=figma&logoColor=007ACC" alt ="Figma">
