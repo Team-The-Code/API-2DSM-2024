@@ -107,7 +107,7 @@ Consiste na criação de um sistema web, para manipulação de projetos de mapea
 * <img src = "https://img.shields.io/badge/TypeScript-007ACC?logo=typescript&logoColor=white&style=for-the-badge" alt ="TypeScript">
 * <img src = "https://img.shields.io/badge/React-20232A?logo=react&logoColor=61DAFB&style=for-the-badge" alt ="React">
 * <img src = "https://img.shields.io/badge/PostgreSQL-316192?logo=postgresql&logoColor=white&style=for-the-badge" alt ="PostgreSQL">
-* <img src = "https://shields.io/badge/simple__diarizer-Trello-blue?logo=Trello&style=flat" alt ="Trello">
+* <img src = "https://img.shields.io/badge/Trello-%23026AA7.svg?style=for-the-badge&logo=Trello&logoColor=white" alt ="Trello">
 * <img src = "https://img.shields.io/badge/GitHub-CED4DA?style=for-the-badge&logo=github&logoColor=007ACC" alt ="GitHub">
 * <img src = "https://img.shields.io/badge/Figma-CED4DA?style=for-the-badge&logo=figma&logoColor=007ACC" alt ="Figma">
 
