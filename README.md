@@ -2,19 +2,29 @@
 <h2>Fatec Professor Francisco Moura, Jacareí - 2º Semestre DSM 2024</h2>
 <h3>Objetivo do projeto:</h3>
 <p>Desenvolver um sistema web, com o objetivo de administrar projetos de mapeamento.</p>
-<h3>Sobre o projeto:</h3>
+<p align="center">
+    <a href ="#objetivo">Objetivo </a>|
+    <a href="#sobre">Sobre</a> | 
+    <a href="#entregas">Entregas</a> | 
+    <a href="#backlogs">Backlogs</a> |  
+    <a href="#tecnologias">Tecnologias</a> | 
+    <a href="#equipe">Equipe</a>
+</p>
+<span id="objetivo"></span>
+
+## 📌 Objetivo do projeto
 <p>Projeto desenvolvido por alunos do 2º semestre do curso de Desenvolvimento de Software Multiplatafora, FATEC Professor Francisco Moura em Jacareí.
 Consiste na criação de um sistema web, para manipulação de projetos de mapeamento. Desenvolvido em Typescript com banco de dados em PostgreSQL.
-
+<span id="sobre"></span>
 
 ## Como executar a aplicação:
 
-* Figma:<a href="">Clique Aqui!</a>
+* Figma:<a href="https://www.figma.com/file/V2loXuWRqI7bLVJjdfitWE/API2DSM?type=design&node-id=43-19&mode=design&t=CnMrLyg3e9i3gNuK-0">Clique Aqui!</a>
 * Vídeo Sprint 1:<a href="">Clique aqui!</a>
 
 
 
-  
+  <span id="backlogs"></span>
 ###   Backlogs
 #### Backlog do produto
 <span align="center"></span>
@@ -31,7 +41,7 @@ Consiste na criação de um sistema web, para manipulação de projetos de mapea
 |**8.Utilização de middleware para validar as rotas**| 3 |
 |**9.Exportar relatório de estatística em PDF**| 2 |
 |**10.Consultas SQL para filtrar por editor**| 2 |
-|**11.MVP**| 1,2,3 |
+|**11.MVP**| 1 |
 |**12.Tela de Cadastro de Usuário**| 1 |
 
 
