@@ -7,6 +7,7 @@
     <a href="#entregas">Entregas</a> | 
     <a href="#backlogs">Backlogs</a> |  
     <a href="#tecnologias">Tecnologias</a> | 
+    <a href="#burndown">Burndown</a> | 
     <a href="#equipe">Equipe</a>
 </p>
 <span id="objetivo"></span>
@@ -104,7 +105,7 @@ Consiste na criação de um sistema web, para manipulação de projetos de mapea
 |||
 |   **Total Story Point** | 44|
 <br>
-<span id="equipe"></span>
+  <span id="burndown"></span>
 
 ## Burndown
 <img src="./docs/Burndown.png">
