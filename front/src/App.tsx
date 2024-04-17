@@ -1,11 +1,19 @@
-import Cadastro from './components/Cadastro';
+
+import Interface from "./components/Interface";
+
+
 
 function App() {
   return (
     <>
-    <Cadastro />
+      <Interface />
     </>
   );
 }
 
 export default App;
+
+
+
+
+

@@ -2,14 +2,8 @@ import { useState } from "react";
 import "../styles/telaCadastro.css";
 import "../styles/interface.css";
 
-enum UserType {
-  Editor = 'editor',
-  Revisor = 'revisor',
-}
+export default function Login (){
 
-export default function Cadastro (){
-
-    const [userType, setUserType] = useState<UserType>(UserType.Editor);
     const [nome, setNome] = useState("");
     const [email, setEmail] = useState("");
     const [senha, setSenha] = useState("");
@@ -17,7 +11,6 @@ export default function Cadastro (){
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
       event.preventDefault();
 
-      console.log('Tipo:', userType);
       console.log('Nome:', nome);
       console.log('Email:', email);
       console.log('Senha:', senha);
@@ -28,7 +21,7 @@ export default function Cadastro (){
     }
   
     return (
-      <div className="container">
+        <div className="container">
         <div className="top-bar">
             <img src="./Logo.png" alt="Logo" className="logo"/>
             <button className="button">Entrar</button>
@@ -36,20 +29,8 @@ export default function Cadastro (){
       <div className="container">
         <div className="content">
         <form className="form" onSubmit={handleSubmit}>
-          <h2>Cadastro de Editor e Revisor</h2>
+          <h2>Login</h2>
           <div className="form-group">
-            <label htmlFor="option">Escolha o tipo de cadastro: </label>
-
-            <select  
-              className="input-field" 
-              value={userType} 
-              onChange={(e) => setUserType(e.target.value as UserType)} 
-              required
-            >
-
-              <option value={UserType.Editor}>Editor</option>
-              <option value={UserType.Revisor}>Revisor</option>
-            </select>
           </div>
 
           <div className="form-group">
@@ -64,7 +45,7 @@ export default function Cadastro (){
             <label htmlFor="password">Senha:</label>
             <input type="password" id="password" className="input-field" placeholder="Digite sua senha" value={senha} onChange={(e) => setSenha(e.target.value)} required/>
           </div>
-          <button type="submit" className="submit-button">Cadastrar</button>
+          <button type="submit" className="submit-button">Entrar</button>
         </form>
         </div>
       </div>
