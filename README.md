@@ -4,7 +4,6 @@
 <p>Desenvolver um sistema web, com o objetivo de administrar projetos de mapeamento.</p>
 <p align="center">
     <a href ="#objetivo">Objetivo </a>|
-    <a href="#sobre">Sobre</a> | 
     <a href="#entregas">Entregas</a> | 
     <a href="#backlogs">Backlogs</a> |  
     <a href="#tecnologias">Tecnologias</a> | 
@@ -45,6 +44,7 @@ Consiste na criação de um sistema web, para manipulação de projetos de mapea
 |**12.Tela de Cadastro de Usuário**| 1 |
 
 
+  <span id="entregas"></span>
 ##  🎯 Entregas
 
 | Sprint| Período | Status |
@@ -121,7 +121,7 @@ Consiste na criação de um sistema web, para manipulação de projetos de mapea
 * <img src = "https://img.shields.io/badge/GitHub-CED4DA?style=for-the-badge&logo=github&logoColor=007ACC" alt ="GitHub">
 * <img src = "https://img.shields.io/badge/Figma-CED4DA?style=for-the-badge&logo=figma&logoColor=007ACC" alt ="Figma">
 
-
+<span id="equipe"></span>
 ## Equipe
 
 |    Função   |  Nome    |    GitHub     |
