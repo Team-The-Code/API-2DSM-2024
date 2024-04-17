@@ -1,0 +1,122 @@
+drop table if exists tbalteracao_atibaia;
+drop table if exists tbalteracao_cruzeiro;
+drop table if exists tbalteracao_taubate;
+drop table if exists tbaoi_atibaia;
+drop table if exists tbaoi_cruzeiro;
+drop table if exists tbaoi_taubate;
+drop table if exists tbapontamento_alteracao_atibaia;
+drop table if exists tbapontamento_alteracao_cruzeiro;
+drop table if exists tbapontamento_alteracao_taubate;
+drop table if exists tbgrade_atuacao_atibaia;
+drop table if exists tbgrade_atuacao_cruzeiro;
+drop table if exists tbgrade_atuacao_taubate;
+
+create table if not exists tbalteracao_atibaia(
+ id integer primary key,
+ area_km2 float,
+ municipio varchar(254),
+ cod_estado varchar(254),
+ cod_class float,
+ class varchar(254),
+ obs varchar(254),
+ geom geometry(multipolygon,31983)
+);
+create table if not exists tbalteracao_cruzeiro(
+ id integer primary key,
+ area_km2 float,
+ municipio varchar(254),
+ cod_estado varchar(254),
+ cod_class float,
+ class varchar(254),
+ obs varchar(254),
+ geom geometry(multipolygon,31983)
+);
+create table if not exists tbalteracao_taubate(
+ id integer primary key,
+ area_km2 float,
+ municipio varchar(254),
+ cod_estado varchar(254),
+ cod_class float,
+ class varchar(254),
+ obs varchar(254),
+ geom geometry(multipolygon,31983)
+);
+create table if not exists tbaoi_atibaia(
+ id integer primary key,
+ cd_mun varchar(7),
+ nm_mun varchar(50),
+ sigla_uf varchar(2),
+ area_km2 float,
+ geom geometry(multipolygon,31983)
+);
+create table if not exists tbaoi_cruzeiro(
+ id integer primary key,
+ cd_mun varchar(7),
+ nm_mun varchar(50),
+ sigla_uf varchar(2),
+ area_km2 float,
+ geom geometry(multipolygon,31983)
+);
+create table if not exists tbaoi_taubate(
+ id integer primary key,
+ cd_mun varchar(7),
+ nm_mun varchar(50),
+ sigla_uf varchar(2),
+ area_km2 float,
+ geom geometry(multipolygon,31983)
+);
+create table if not exists tbapontamento_alteracao_atibaia(
+ id integer primary key,
+ correcao varchar(254),
+ status varchar(254),
+ obs varchar(254),
+ geom geometry(point,31983)
+);
+create table if not exists tbapontamento_alteracao_cruzeiro(
+	 id integer primary key,
+ correcao varchar(254),
+ status varchar(254),
+ obs varchar(254),
+ geom geometry(point,31983)
+);
+create table if not exists tbapontamento_alteracao_taubate(
+ id integer primary key,
+ correcao varchar(254),
+ status varchar(254),
+ obs varchar(254),
+ geom geometry(point,31983)
+);
+create table if not exists tbgrade_atuacao_atibaia(
+ id integer primary key,
+ atribuicao varchar(25),
+ status varchar(25),
+ validacao varchar(25),
+ status_val varchar(25),
+ obs varchar(250),
+ area_km2 float,
+ geom geometry(multipolygon,31983)
+);
+create table if not exists tbgrade_atuacao_cruzeiro(
+ id integer primary key,
+ atribuicao varchar(25),
+ status varchar(25),
+ validacao varchar(25),
+ status_val varchar(25),
+ obs varchar(250),
+ area_km2 float,
+ geom geometry(multipolygon,31983)
+);
+create table if not exists tbgrade_atuacao_taubate(
+ id integer primary key,
+ atribuicao varchar(25),
+ status varchar(25),
+ validacao varchar(25),
+ status_val varchar(25),
+ obs varchar(250),
+ area_km2 float,
+ geom geometry(multipolygon,31983)
+);
+
+select * from tbgrade_atuacao_taubate;
+
+
