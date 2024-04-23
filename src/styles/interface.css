@@ -85,8 +85,8 @@ table th, table td {
 }
 
 .logo {
-    width: 12%; /* Define a largura da imagem como 50% do seu contêiner */
-    height: auto; /* Mantém a proporção da altura automaticamente */
+    width: 12%; 
+    height: auto;
 
 }
 .button {
