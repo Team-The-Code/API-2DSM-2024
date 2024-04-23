@@ -32,9 +32,13 @@ function Erro() {
 function Menu() {
   return (
     <div>
-      <Link to="/cadastro">Cadastro</Link>
-      <Link to="/interface">Interface</Link>
-      <Link to="/login">Login</Link>
-    </div>
-  );
+      <div className="top-bar">
+        <img src="./Logo.png" alt="Logo" className="logo" />
+        <div >
+      <Link style={{padding: "20px", color: "black", textDecoration: "none"}} to="/cadastro">Cadastro</Link>
+      <Link style={{padding: "20px", color: "black", textDecoration: "none"}}to="/interface">Interface</Link>
+      <Link style={{padding: "20px", color: "black", textDecoration: "none"}} to="/login">Login</Link>
+        </div>
+      </div>
+    </div>  );
 }

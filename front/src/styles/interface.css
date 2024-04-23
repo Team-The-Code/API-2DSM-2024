@@ -17,7 +17,7 @@ body {
     color: white;
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Para espaçar os itens uniformemente */
+    justify-content: space-between; 
     padding: 10px 20px;
 }
 

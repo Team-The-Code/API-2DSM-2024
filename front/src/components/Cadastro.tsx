@@ -1,7 +1,8 @@
 import { useState } from "react";
-import "../styles/telaCadastro.css";
 import "../styles/interface.css";
+import "../styles/telaCadastro.css"
 import service from "../services/UserService";
+import { Link } from "react-router-dom";
 
 enum UserType {
   Editor = "editor",
@@ -23,11 +24,6 @@ export default function Cadastro() {
 
   };
   return (
-    <div className="container">
-      <div className="top-bar">
-        <img src="./Logo.png" alt="Logo" className="logo" />
-        <button className="button">Entrar</button>
-      </div>
       <div className="container">
         <div className="content">
           <form className="form" onSubmit={handleSubmit}>
@@ -82,12 +78,19 @@ export default function Cadastro() {
                 required
               />
             </div>
-            <button type="submit" className="submit-button">
-              Cadastrar
-            </button>
+            <button type="submit" className="submit-button" onClick={Cadastrar}>Cadastrar</button>
           </form>
         </div>
       </div>
-    </div>
   );
+}
+
+
+
+function Cadastrar() {
+  return(
+    <>
+      <Link style={{}} to="/interface">Cadastrar</Link>
+    </>
+  )
 }

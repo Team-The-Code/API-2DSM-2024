@@ -11,11 +11,6 @@ export default function Interface(){
     const [pesquisar, setPesquisar] = useState("");
     
     return (
-        <div className="container">
-        <div className="top-bar">
-            <img src="./Logo.png" alt="Logo" className="logo"/>
-            <button className="button">Entrar</button>
-        </div>
         <div className="content">
             <aside className="sidebar">
                 <button onClick={showInput}>Opção 1</button>
@@ -48,6 +43,5 @@ export default function Interface(){
                 </table>
             </div>
         </div>
-    </div>
     )
 }

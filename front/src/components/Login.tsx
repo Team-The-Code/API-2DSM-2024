@@ -1,5 +1,4 @@
 import { useState } from "react";
-import "../styles/telaCadastro.css";
 import "../styles/interface.css";
 
 export default function Login (){
@@ -21,11 +20,6 @@ export default function Login (){
     }
   
     return (
-        <div className="container">
-        <div className="top-bar">
-            <img src="./Logo.png" alt="Logo" className="logo"/>
-            <button className="button">Entrar</button>
-        </div>
       <div className="container">
         <div className="content">
         <form className="form" onSubmit={handleSubmit}>
@@ -49,6 +43,5 @@ export default function Login (){
         </form>
         </div>
       </div>
-    </div>
     );
   };
