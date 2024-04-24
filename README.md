@@ -51,7 +51,7 @@ Consiste na criação de um sistema web, para manipulação de projetos de mapea
 | Sprint| Período | Status |
 |:-----:|:----------:|:---------:|
 <a></a>
-| 01 |   21/03/2024 – 17/04/2024 | 
+| 01 |   21/03/2024 – 17/04/2024 | Entregue 
 
 
 #### User Story
