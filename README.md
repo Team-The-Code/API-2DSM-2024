@@ -110,7 +110,42 @@ Consiste na criação de um sistema web, para manipulação de projetos de mapea
 ## Burndown
 <img src="./docs/Burndown.png">
 
+## Retrospectiva da Sprint 1
+|O que funcionou bem| O que poderia melhorar|
+|:-----------------:|:---------------------:|
+| **Conseguimos cumprir com nossas metas;**|**Distribuição de tarefas;**|
+|**Atendemos os requisitos da cliente.** |**Falta de objetivo;**|
+|                   |**Ambiguidade;** |
+|                   |**Aproveitamento do tempo.**|
 
+
+<br>
+<hr>
+<br>
+ <span id="sprint_2"></span>
+
+### Sprint 2 
+| Item | Funcionalidade             |
+| :--: | :------------------------------------------------------- |
+|  01  |**1.Apresentação via GitHub**   |
+|  02  |**2.Tela de criar projetos**|
+|  03  |**3.Planning Poker**|
+|  04  |**4.Trello**|
+|  05  |**5.Burndown**|
+|  06  |**6.Tela de criar projetos**|
+
+### Tarefas na Sprint 
+|   Tarefas  |         Story Point         |
+:-------------------------:|:-----:|
+| **Desenvolver um Sistema deve ser limpo e sem poluição de informação**| 0 |
+| **Utilização de middleware para validar rotas**| 03 |
+|**Consultas Sql para filtrar por editor**| 02 |
+|**Organização do código que faz o CRUD em classes** | 02 |
+| **Agrupar o código em pacotes e módulos** | 03 |
+| **Aplicar técnicas para otimização de algoritmos** | 02 |
+| **Front tela de criar projetos**| 03 |
+|||
+|   **Total Story Point** | 56|
 
 <span id="tecnologias"></span>
 
