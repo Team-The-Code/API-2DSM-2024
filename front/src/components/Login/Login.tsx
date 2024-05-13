@@ -1,11 +1,17 @@
-import { useState } from "react";
-import "../styles/interface.css";
+import "../../styles/interface.css";
+import useCadastro from "../../hooks";
+import { ContainerSld } from "../Cadastro/Cadastro";
 
 export default function Login (){
-
-    const [nome, setNome] = useState("");
-    const [email, setEmail] = useState("");
-    const [senha, setSenha] = useState("");
+  const {
+    nome,
+    email,
+    senha,
+    setNome,
+    setEmail,
+    setSenha,
+  } = useCadastro();
+    
 
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
       event.preventDefault();
@@ -20,6 +26,7 @@ export default function Login (){
     }
   
     return (
+      <ContainerSld>
       <div className="container">
         <div className="content">
         <form className="form" onSubmit={handleSubmit}>
@@ -43,5 +50,6 @@ export default function Login (){
         </form>
         </div>
       </div>
+      </ContainerSld>
     );
   };
