@@ -1,5 +1,4 @@
 import "../../styles/interface.js";
-import "../../styles/interface.css";
 import styled from "styled-components";
 import { hideInput, showInput } from "../../styles/interface.js";
 

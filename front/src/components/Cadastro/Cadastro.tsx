@@ -1,4 +1,4 @@
-import "../../styles/interface.css";
+
 import service from "../../services/UserService";
 import useCadastro from "../../hooks";
 import styled from "styled-components";

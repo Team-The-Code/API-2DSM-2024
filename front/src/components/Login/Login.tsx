@@ -1,4 +1,4 @@
-import "../../styles/interface.css";
+
 import useCadastro from "../../hooks";
 import { ContainerSld } from "../Cadastro/Cadastro";
 
