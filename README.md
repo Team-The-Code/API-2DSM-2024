@@ -21,6 +21,7 @@ Consiste na criação de um sistema web, para manipulação de projetos de mapea
 
 * Figma:<a href="https://www.figma.com/file/V2loXuWRqI7bLVJjdfitWE/API2DSM?type=design&node-id=43-19&mode=design&t=CnMrLyg3e9i3gNuK-0">Clique Aqui!</a>
 * Vídeo Sprint 1:<a href="https://youtu.be/igHuRpgoWJU">Clique aqui!</a>
+* Vídeo Sprint 2:<a href="">Clique aqui!</a>
 
 
 
@@ -41,8 +42,7 @@ Consiste na criação de um sistema web, para manipulação de projetos de mapea
 |**8.Utilização de middleware para validar as rotas**| 3 |
 |**9.Exportar relatório de estatística em PDF**| 2 |
 |**10.Consultas SQL para filtrar por editor**| 2 |
-|**11.MVP**| 1 |
-|**12.Tela de Cadastro de Usuário**| 1 |
+|**11.Tela de Cadastro de Usuário**| 1 |
 
 
   <span id="entregas"></span>
@@ -52,6 +52,7 @@ Consiste na criação de um sistema web, para manipulação de projetos de mapea
 |:-----:|:----------:|:---------:|
 <a></a>
 | 01 |   21/03/2024 – 17/04/2024 | Entregue 
+| 02 |   22/04/2024 – 15/05/2024 | Entregue 
 
 
 #### User Story
@@ -132,20 +133,22 @@ Consiste na criação de um sistema web, para manipulação de projetos de mapea
 |  03  |**3.Planning Poker**|
 |  04  |**4.Trello**|
 |  05  |**5.Burndown**|
-|  06  |**6.Tela de criar projetos**|
+|  06  |**6.Interface do Editor e revisor**|
 
 ### Tarefas na Sprint 
 |   Tarefas  |         Story Point         |
 :-------------------------:|:-----:|
-| **Desenvolver um Sistema deve ser limpo e sem poluição de informação**| 0 |
-| **Utilização de middleware para validar rotas**| 03 |
-|**Consultas Sql para filtrar por editor**| 02 |
-|**Organização do código que faz o CRUD em classes** | 02 |
+| **Utilização de middleware para validar rotas**| 05 |
+|**Consultas Sql para filtrar por editor**| 03 |
+|**Organização do código que faz o CRUD em classes** | 03 |
 | **Agrupar o código em pacotes e módulos** | 03 |
-| **Aplicar técnicas para otimização de algoritmos** | 02 |
-| **Front tela de criar projetos**| 03 |
+| **Aplicar técnicas para otimização de algoritmos** | 05 |
+| **Front tela de criar projetos**| 05 |
 |||
-|   **Total Story Point** | 56|
+|   **Total Story Point** | 24|
+
+## Burndown
+<img src="./docs/Burndown2.png">
 
 <span id="tecnologias"></span>
 
@@ -165,5 +168,4 @@ Consiste na criação de um sistema web, para manipulação de projetos de mapea
 |   Product Owner| Vitor Cezar de Souza|[GitHub](https://github.com/vooshybee)|
 |   Scrum Master| Ana Júlia Tette Lopes Afonso |[GitHub](https://github.com/AnaBarbancho)|
 |   Dev Team|  Paulo Alexandre Bueno|[Github](https://github.com/pauloabueno23)|
-|   Dev Team| Edlaine de Paula Souza |[GitHub](https://github.com/edlaine-souza)|
 |   Dev Team|  Marcelly Cristini Santos de Souza|[GitHub](https://github.com/Marcelly-cris)|
