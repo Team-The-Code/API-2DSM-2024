@@ -138,14 +138,14 @@ Consiste na criação de um sistema web, para manipulação de projetos de mapea
 ### Tarefas na Sprint 
 |   Tarefas  |         Story Point         |
 :-------------------------:|:-----:|
-| **Utilização de middleware para validar rotas**| 05 |
-|**Consultas Sql para filtrar por editor**| 03 |
+| **Utilização de middleware para validar rotas**| 06 |
+|**Consultas Sql para filtrar por editor**| 04 |
 |**Organização do código que faz o CRUD em classes** | 03 |
-| **Agrupar o código em pacotes e módulos** | 03 |
-| **Aplicar técnicas para otimização de algoritmos** | 05 |
-| **Front tela de criar projetos**| 05 |
+| **Agrupar o código em pacotes e módulos** | 02 |
+| **Aplicar técnicas para otimização de algoritmos** | 06 |
+| **Front tela de criar projetos**| 09 |
 |||
-|   **Total Story Point** | 24|
+|   **Total Story Point** | 30 |
 
 ## Burndown
 <img src="./docs/Burndown2.png">
