@@ -21,6 +21,15 @@ export interface CadastroProps {
 }
 
 
+export interface LoginProps {
+  name:string;
+  mail:string;
+  password:string;
+  setNome: (value: string) => void;
+  setEmail: (value: string) => void;
+  setSenha: (value: string) => void;
+}
+
 
 
 

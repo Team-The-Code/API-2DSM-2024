@@ -13,8 +13,12 @@ class UserController {
     return res.json(r);
   }
 
-  public async list(_: Request, res: Response): Promise<Response> {
-    const r: any = await query("SELECT id,mail FROM users ORDER BY mail");
+  public async login(req: Request, res: Response): Promise<Response> {
+    const {name, mail, password} = req.body;
+    const r: any = await query(
+      `SELECT * FROM users WHERE mail = $2 AND senha = $3`,
+      [name, mail, password]
+      );
     return res.json(r);
   }
 

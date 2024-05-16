@@ -1,5 +1,6 @@
 
 import useCadastro from "../../hooks";
+import service1 from "../../services/UserLogin";
 import { ContainerSld } from "../Cadastro/Cadastro";
 
 export default function Login (){
@@ -13,8 +14,11 @@ export default function Login (){
   } = useCadastro();
     
 
-    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
       event.preventDefault();
+
+      const r = await service1.login(nome, email, senha);
+      console.log("r:", r);
 
       console.log('Nome:', nome);
       console.log('Email:', email);
