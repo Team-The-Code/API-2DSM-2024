@@ -2,19 +2,30 @@
 <h2>Fatec Professor Francisco Moura, Jacareí - 2º Semestre DSM 2024</h2>
 <h3>Objetivo do projeto:</h3>
 <p>Desenvolver um sistema web, com o objetivo de administrar projetos de mapeamento.</p>
-<h3>Sobre o projeto:</h3>
+<p align="center">
+    <a href ="#objetivo">Objetivo </a>|
+    <a href="#entregas">Entregas</a> | 
+    <a href="#backlogs">Backlogs</a> |  
+    <a href="#tecnologias">Tecnologias</a> | 
+    <a href="#burndown">Burndown</a> | 
+    <a href="#equipe">Equipe</a>
+</p>
+<span id="objetivo"></span>
+
+## 📌 Objetivo do projeto
 <p>Projeto desenvolvido por alunos do 2º semestre do curso de Desenvolvimento de Software Multiplatafora, FATEC Professor Francisco Moura em Jacareí.
 Consiste na criação de um sistema web, para manipulação de projetos de mapeamento. Desenvolvido em Typescript com banco de dados em PostgreSQL.
-
+<span id="sobre"></span>
 
 ## Como executar a aplicação:
 
-* Figma:<a href="">Clique Aqui!</a>
-* Vídeo Sprint 1:<a href="">Clique aqui!</a>
+* Figma:<a href="https://www.figma.com/file/V2loXuWRqI7bLVJjdfitWE/API2DSM?type=design&node-id=43-19&mode=design&t=CnMrLyg3e9i3gNuK-0">Clique Aqui!</a>
+* Vídeo Sprint 1:<a href="https://youtu.be/igHuRpgoWJU">Clique aqui!</a>
+* Vídeo Sprint 2:<a href="https://youtu.be/Pn7xGSRfj14">Clique aqui!</a>
 
 
 
-  
+  <span id="backlogs"></span>
 ###   Backlogs
 #### Backlog do produto
 <span align="center"></span>
@@ -31,16 +42,17 @@ Consiste na criação de um sistema web, para manipulação de projetos de mapea
 |**8.Utilização de middleware para validar as rotas**| 3 |
 |**9.Exportar relatório de estatística em PDF**| 2 |
 |**10.Consultas SQL para filtrar por editor**| 2 |
-|**11.MVP**| 1,2,3 |
-|**12.Tela de Cadastro de Usuário**| 1 |
+|**11.Tela de Cadastro de Usuário**| 1 |
 
 
+  <span id="entregas"></span>
 ##  🎯 Entregas
 
 | Sprint| Período | Status |
 |:-----:|:----------:|:---------:|
 <a></a>
-| 01 |   21/03/2024 – 17/04/2024 | 
+| 01 |   21/03/2024 – 17/04/2024 | Entregue 
+| 02 |   22/04/2024 – 15/05/2024 | Entregue 
 
 
 #### User Story
@@ -94,12 +106,49 @@ Consiste na criação de um sistema web, para manipulação de projetos de mapea
 |||
 |   **Total Story Point** | 44|
 <br>
-<span id="equipe"></span>
+  <span id="burndown"></span>
 
 ## Burndown
 <img src="./docs/Burndown.png">
 
+## Retrospectiva da Sprint 1
+|O que funcionou bem| O que poderia melhorar|
+|:-----------------:|:---------------------:|
+| **Conseguimos cumprir com nossas metas;**|**Distribuição de tarefas;**|
+|**Atendemos os requisitos da cliente.** |**Falta de objetivo;**|
+|                   |**Ambiguidade;** |
+|                   |**Aproveitamento do tempo.**|
 
+
+<br>
+<hr>
+<br>
+ <span id="sprint_2"></span>
+
+### Sprint 2 
+| Item | Funcionalidade             |
+| :--: | :------------------------------------------------------- |
+|  01  |**1.Apresentação via GitHub**   |
+|  02  |**2.Tela de criar projetos**|
+|  03  |**3.Planning Poker**|
+|  04  |**4.Trello**|
+|  05  |**5.Burndown**|
+|  06  |**6.Interface do Editor e revisor**|
+
+### Tarefas na Sprint 
+|   Tarefas  |         Story Point         |
+:-------------------------:|:-----:|
+| **Utilização de middleware para validar rotas**| 06 |
+|**Consultas Sql para filtrar por editor**| 04 |
+|**Organização do código que faz o CRUD em classes** | 03 |
+| **Agrupar o código em pacotes e módulos** | 02 |
+| **Aplicar técnicas para otimização de algoritmos** | 06 |
+| **Front tela de criar projetos**| 09 |
+|||
+|   **Total Story Point** | 30 |
+
+## Burndown
+<img src="./docs/Burndown2.png">
 
 <span id="tecnologias"></span>
 
@@ -111,7 +160,7 @@ Consiste na criação de um sistema web, para manipulação de projetos de mapea
 * <img src = "https://img.shields.io/badge/GitHub-CED4DA?style=for-the-badge&logo=github&logoColor=007ACC" alt ="GitHub">
 * <img src = "https://img.shields.io/badge/Figma-CED4DA?style=for-the-badge&logo=figma&logoColor=007ACC" alt ="Figma">
 
-
+<span id="equipe"></span>
 ## Equipe
 
 |    Função   |  Nome    |    GitHub     |
@@ -119,5 +168,4 @@ Consiste na criação de um sistema web, para manipulação de projetos de mapea
 |   Product Owner| Vitor Cezar de Souza|[GitHub](https://github.com/vooshybee)|
 |   Scrum Master| Ana Júlia Tette Lopes Afonso |[GitHub](https://github.com/AnaBarbancho)|
 |   Dev Team|  Paulo Alexandre Bueno|[Github](https://github.com/pauloabueno23)|
-|   Dev Team| Edlaine de Paula Souza |[GitHub](https://github.com/edlaine-souza)|
 |   Dev Team|  Marcelly Cristini Santos de Souza|[GitHub](https://github.com/Marcelly-cris)|

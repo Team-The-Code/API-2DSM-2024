@@ -1,0 +1,100 @@
+/* Reset básico para garantir consistência entre navegadores */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+header .logo img {
+    max-width: 150px;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+}
+
+header nav ul li {
+    margin: 0 1rem;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+main {
+    padding: 2rem;
+}
+
+.status {
+    margin-bottom: 1.5rem;
+}
+
+.status h2 {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 0.5rem;
+    text-align: center;
+}
+
+.relatorio h2 {
+    margin-bottom: 1rem;
+    text-align: center;
+    color: #333;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1.5rem;
+}
+
+table thead {
+    background-color: #333;
+    color: #fff;
+}
+
+table th, table td {
+    border: 1px solid #ccc;
+    padding: 0.75rem;
+    text-align: center;
+}
+
+.actions {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.actions button {
+    background-color: #FFA500; /* Cor laranja */
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    margin: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 1rem;
+    border-radius: 5px;
+}
+
+.actions button:hover {
+    background-color: #FF8C00; /* Cor laranja mais escura para o hover */
+}
