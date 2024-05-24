@@ -59,7 +59,7 @@ Consiste na criação de um sistema web, para manipulação de projetos de mapea
 
 |**Requistos**|**User Story**|
 |:----------------:|:-------------------------------------:|
-|**1.Tela de Login**|**"Como gestor, eu quero cadastrar meus funcionários para acessar o sistema.**|
+|**1.Tela de Login**|**"Como gestor, eu quero logar com a minha conta para acessar o sistema.**|
 |**2.Tela de criar projetos**|**"Como gestor, eu quero criar novos projetos e gerenciá-los, para realizar atividades"**|
 |**3.Consultas usando SQL (inserir, listar, excluir e atualizar registros das tabelas)**|**"Como gestor, eu quero modificar informações de usuário para alterar informações de usuários;"**|
 |**4.Cadastrar editor e revisor**|**"Como gestor, eu quero cadastrar editor e revisor, para controlar e revisar meu trabalho"**|
