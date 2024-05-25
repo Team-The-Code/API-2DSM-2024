@@ -3,7 +3,7 @@ import api from "./api";
 
 class UserService {
     async create(name:string, mail:string, password:string, profile:string): Promise<UserProps> {
-        const {data} = await api.post("/usuario",{
+        const {data} = await api.post("/cadastro",{
             name, mail, password, profile
         });
         console.log("data", data);

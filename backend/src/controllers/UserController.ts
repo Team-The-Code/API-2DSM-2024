@@ -18,7 +18,7 @@ class UserController {
     const { name, mail, password } = req.body;
   
   try {
-    const user = await pool.query('SELECT nome,email,senha FROM usuario WHERE nome = $1 AND email = $2  AND senha = $3', [name, mail, password]);
+    const user = await pool.query('SELECT name,mail,password FROM users WHERE name = $1 AND mail = $2  AND password = $3', [name, mail, password]);
     
     if (user.rows.length === 0) {
       console.log(user.rows[0].id)

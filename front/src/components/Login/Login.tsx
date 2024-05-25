@@ -1,5 +1,4 @@
 import React, { useState, FormEvent } from "react";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { ContainerSld } from "../Cadastro/Cadastro";
 import api from "../../services/api";
