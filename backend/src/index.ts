@@ -1,20 +1,20 @@
 import express from "express";
 import cors from "cors";
-import routes from "./routes";
 import dotenv from "dotenv";
+import login from "./routes/login";
 dotenv.config();
 
 // será usado 3000 se a variável de ambiente não tiver sido definida
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 const app = express(); // cria o servidor e coloca na variável app
 // suportar parâmetros JSON no body da requisição
 app.use(express.json());
 app.use(cors({
-  origin: "http://localhost:3000"
+  origin: "http://localhost:3001"
 }));
 // inicializa o servidor na porta especificada
 app.listen(PORT, () => {
   console.log(`Rodando na porta ${PORT}...`);
 });
+app.use(login)
 // define a rota para o pacote /routes
-app.use(routes);

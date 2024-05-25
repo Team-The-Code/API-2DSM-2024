@@ -1,13 +1,13 @@
-import { Router, Request, Response } from "express";
-import user from "./user";
+import { Router } from "express";
+import UserController from "../controllers/UserController";
 
 const routes = Router();
-routes.use("/login", user);
+routes.post("/login", UserController.login);
 
 //aceita qualquer método HTTP ou URL
-routes.use((_: Request, res: Response) =>
-  res.json({ error: "Requisição desconhecida" })
-);
+// routes.use((_: Request, res: Response) =>
+//   res.json({ error: "Requisição desconhecida" })
+// );
 
 
 
