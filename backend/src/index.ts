@@ -10,7 +10,7 @@ const app = express(); // cria o servidor e coloca na variável app
 // suportar parâmetros JSON no body da requisição
 app.use(express.json());
 app.use(cors({
-  origin: "http://localhost:3001"
+  origin: "http://localhost:3000"
 }));
 // inicializa o servidor na porta especificada
 app.listen(PORT, () => {

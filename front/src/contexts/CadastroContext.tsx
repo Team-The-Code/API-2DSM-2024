@@ -4,9 +4,9 @@ import { CadastroProps, UserType } from "../types";
 export const CadastroContext = createContext({} as CadastroProps);
 
 export function CadastroProvider({ children }: any) {
-    const [nome, setNome] = useState("Maria");
-    const [email, setEmail] = useState("maria@teste.com");
-    const [senha, setSenha] = useState("123");
+    const [nome, setNome] = useState("");
+    const [email, setEmail] = useState("");
+    const [senha, setSenha] = useState("");
     const [perfil, setPerfil] = useState<UserType>(UserType.Editor);
 
 
