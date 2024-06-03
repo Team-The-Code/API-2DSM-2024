@@ -1,0 +1,14 @@
+{
+  "name": "api-2dsm-2024",
+  "version": "1.0.0",
+  "description": "<h1>The Code</h1>\r <h2>Fatec Professor Francisco Moura, Jacareí - 2º Semestre DSM 2024</h2>\r <h3>Objetivo do projeto:</h3>\r <p>Desenvolver um sistema web, com o objetivo de administrar projetos de mapeamento.</p>\r <p align=\"center\">\r     <a href =\"#objetivo\">Objetivo </a>|\r     <a href=\"#entregas\">Entregas</a> | \r     <a href=\"#backlogs\">Backlogs</a> |  \r     <a href=\"#tecnologias\">Tecnologias</a> | \r     <a href=\"#burndown\">Burndown</a> | \r     <a href=\"#equipe\">Equipe</a>\r </p>\r <span id=\"objetivo\"></span>",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

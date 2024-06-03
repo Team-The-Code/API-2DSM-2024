@@ -7,6 +7,7 @@ import { hideInput, showInput } from "../../styles/interface.js";
 export default function Interface(){
      return (
         <WorkspaceSld>
+            
         <div className="container">
   
     <div className="left-panel">
@@ -79,6 +80,7 @@ export const WorkspaceSld = styled.div`
 .container {
     display: flex;
     height: 100vh;
+    width:99.2vw
 
 }
 

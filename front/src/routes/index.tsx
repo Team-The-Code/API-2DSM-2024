@@ -5,23 +5,25 @@ import Cadastro from "../components/Cadastro/Cadastro";
 import { CadastroProvider } from "../contexts/CadastroContext";
 import Login from "../components/Login/Login";
 import Interface from "../components/Editor/Interface";
+import Sidebar from "../components/Gestor";
 
 
 export default function Rotas() {
   return (
     <PageSld>
-          <CadastroProvider>
-            <BrowserRouter>
-              <Menu />
-              <BodySld>
-                <Routes>
-                  <Route path="/interface" element={<Interface />} />
-                  <Route path="/cadastro" element={<Cadastro />} />
-                  <Route path="/login" element={<Login />} />
-                </Routes>
-              </BodySld>
-            </BrowserRouter>
-          </CadastroProvider>
+      <CadastroProvider>
+        <BrowserRouter>
+          <Menu />
+          <BodySld>
+            <Routes>
+              <Route path="/" element={<Login />} />
+              <Route path="/interface" element={<Interface />} />
+              <Route path="/cadastro" element={<Cadastro />} />
+              <Route path="/gestor" element={<Sidebar />} />
+            </Routes>
+          </BodySld>
+        </BrowserRouter>
+      </CadastroProvider>
     </PageSld>
   );
 }

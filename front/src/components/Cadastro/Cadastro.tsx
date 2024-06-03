@@ -4,8 +4,6 @@ import useCadastro from "../../hooks";
 import styled from "styled-components";
 import { UserType } from "../../types";
 
-
-
 export default function Cadastro() {
   const {
     nome,
@@ -41,8 +39,8 @@ export default function Cadastro() {
               onChange={(e) => setPerfil(e.target.value as UserType)}
               required
             >
-              <option value={UserType.Editor}>Editor</option>
-              <option value={UserType.Revisor}>Revisor</option>
+              <option value={UserType.Administrador}>Administrador</option>
+              <option value={UserType.Usuario}>Usuário</option>
             </select>
           </div>
 

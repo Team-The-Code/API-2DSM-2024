@@ -7,9 +7,8 @@ export default function Menu() {
     <Sld>
       <Logo />
       <RightSld>
-        <ItemMenu link="/interface">Área de Trabalho</ItemMenu>
         <ItemMenu link="/cadastro">Cadastro</ItemMenu>
-        <ItemMenu link="/login">Sair</ItemMenu>
+        <ItemMenu link="/">Login</ItemMenu>
       </RightSld>
     </Sld>
   );

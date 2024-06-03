@@ -6,8 +6,8 @@ export interface UserProps {
 }
 
 export enum UserType {
-  Editor = "editor",
-  Revisor = "revisor",
+  Administrador = "gestor",
+  Usuario = "usuario",
 }
 export interface CadastroProps {
   nome:string;
@@ -20,6 +20,13 @@ export interface CadastroProps {
   setPerfil: (value: UserType) => void;
 }
 
+
+export interface LoginProps {
+  mail:string;
+  password:string;
+  setEmail: (value: string) => void;
+  setSenha: (value: string) => void;
+}
 
 
 
