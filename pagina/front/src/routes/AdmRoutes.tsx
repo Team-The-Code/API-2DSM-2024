@@ -6,6 +6,7 @@ export default function AdmRoutes() {
   return (
     <>
       <MenuAdm />
+      
       <Routes>
         <Route path="/" element={<StatsPage />} />
         <Route path="/estatisticas" element={<StatsPage />} />

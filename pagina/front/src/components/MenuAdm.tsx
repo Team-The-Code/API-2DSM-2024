@@ -6,8 +6,6 @@ export default function MenuAdm() {
     <Sld>
       <ImgSld alt="" src="./logo-branca-completa.svg" />
       <RightSld>
-        <Link to="/estatisticas">Estatísticas</Link>
-        <Link to="/usuarios">Usuários</Link>
         <Link to="/configuracoes">Configurações</Link>
         <Link to="/logout">Logout</Link>
       </RightSld>
