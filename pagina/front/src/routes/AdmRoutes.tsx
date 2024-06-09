@@ -4,6 +4,7 @@ import { MenuAdm } from "../components";
 import MenuLateral from "../components/MenuLateral";
 import MapsPage from "../pages/MapsPage";
 import PointPage from "../pages/PointPage";
+import ProjectAreaPage from "../pages/Project";
 
 export default function AdmRoutes() {
   return (
@@ -11,7 +12,7 @@ export default function AdmRoutes() {
       <MenuAdm />
       <MenuLateral />
       <Routes>
-        <Route path="/" element={<StatsPage />} />
+        <Route path="/delimit" element={<ProjectAreaPage />} />
         <Route path="/estatisticas" element={<StatsPage />} />
         <Route path="/estatisticas/GridsByProject" element={<StatsPage />} />
         <Route path="/estatisticas/mappingByProject" element={<MapsPage />} />
