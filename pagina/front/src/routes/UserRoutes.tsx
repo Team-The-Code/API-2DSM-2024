@@ -8,7 +8,6 @@ export default function UserRoutes() {
       <MenuUser />
       <Routes>
         <Route path="/" element={<ConfigPage />} />
-        <Route path="/configuracoes" element={<ConfigPage />} />
         <Route path="/logout" element={<Logout />} />
       </Routes>
     </>

@@ -34,6 +34,9 @@ export interface MappingByProjectProps {
 }
 
 export interface PointersByProjectProps {
+  finished_pointers: ReactNode;
+  idproject: null | undefined;
+  finished_grids: any;
   id: number;
   name: string;
   total_pointers: number;
@@ -57,4 +60,21 @@ export interface UserContextProps {
 
 export interface ProviderProps {
   children: ReactNode;
+}
+export interface ProjectStats {
+  idproject: number;
+  name: string;
+  total_grids: number;
+  finished_grids: number;
+  total_area: number;
+  finished_area: number;
+}
+export interface BarChartProps {
+  data: MappingByProjectProps[];
+}
+export interface GridsStatsChartProps {
+  data: GridsByProjectProps[];
+}
+export interface PointersStatsChartProps {
+  data: PointersByProjectProps[];
 }

@@ -1,17 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import { GridsByProjectProps, ErrorProps } from '../types';
+import { PointersByProjectProps, ErrorProps } from '../types';
 import { Stats } from '../services';
-import GridsStatsChart from '../components/GridsStatsChart';
+import PointersStatsChart from '../components/PointersStatsChart';
 import html2pdf from 'html2pdf.js';
 
-const StatsPage: React.FC = () => {
-  const [stats, setStats] = useState<GridsByProjectProps[]>([]);
+
+const PointersStatsPage: React.FC = () => {
+  const [stats, setStats] = useState<PointersByProjectProps[]>([]);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     const fetchStats = async () => {
-      const response = await Stats.gridsByProject();
+      const response = await Stats.pointersByProject();
       if ('erro' in response) {
         setError(response.erro);
       } else {
@@ -21,7 +22,6 @@ const StatsPage: React.FC = () => {
 
     fetchStats();
   }, []);
-
   const handlePrintContent = () => {
     const element = document.getElementById('printable-content');
     if (element) {
@@ -36,40 +36,31 @@ const StatsPage: React.FC = () => {
     }
   };
 
+
   return (
     <Container>
-      <Title>Grades por Projeto</Title>
-      <div id="printable-content">
-        <GridsStatsChartWrapper>
-          {error && <ErrorMessage>{error}</ErrorMessage>}
-          {stats.length > 0 && <GridsStatsChart data={stats} />}
-        </GridsStatsChartWrapper>
-        <StatsTableWrapper>
-          <StatsTable>
-            <thead>
-              <tr>
-                <th>Nome do Projeto</th>
-                <th>Total de Grades</th>
-                <th>Grades Finalizadas</th>
-                <th>Área Total (km²)</th>
-                <th>Área Finalizada (km²)</th>
-              </tr>
-            </thead>
-            <tbody>
-              {stats.map((stat) => (
-                <tr key={stat.idproject}>
-                  <td>{stat.name}</td>
-                  <td>{stat.total_grids}</td>
-                  <td>{stat.finished_grids}</td>
-                  <td>{stat.total_area}</td>
-                  <td>{stat.finished_area}</td>
-                </tr>
-              ))}
-            </tbody>
-          </StatsTable>
-        </StatsTableWrapper>
-      </div>
-      <div className="end_button">
+    <Title>Estatísticas de Apontamentos por Projeto</Title>
+    {error && <ErrorMessage>{error}</ErrorMessage>}
+    {stats.length > 0 && <PointersStatsChart data={stats} />}
+    <StatsTable>
+      <thead>
+        <tr>
+          <th>Nome do Projeto</th>
+          <th>Quantidade de Apontamentos</th>
+          <th>Apontamentos Finalizados</th>
+        </tr>
+      </thead>
+      <tbody>
+        {stats.map((stat) => (
+          <tr key={stat.idproject}>
+            <td>{stat.name}</td>
+            <td>{stat.total_pointers}</td>
+            <td>{stat.finished_pointers}</td>
+          </tr>
+        ))}
+      </tbody>
+    </StatsTable>
+    <div className="end_button">
         <section className="actions">
           <button onClick={handlePrintContent}>Imprimir Conteúdo</button>
         </section>
@@ -78,15 +69,15 @@ const StatsPage: React.FC = () => {
   );
 };
 
-export default StatsPage;
+export default PointersStatsPage;
 
 const Container = styled.div`
   padding: 20px;
   max-width: 900px;
   margin: 0 auto;
-  margin-left: 18%;
-  margin-top: 7%;
-  .actions button {
+  margin-left:18%;
+  margin-top:7%;
+    .actions button {
     background-color: #ff6900; /* Cor laranja */
     color: #fff;
     border: none;
@@ -102,6 +93,7 @@ const Container = styled.div`
     background-color: #ff8c00; /* Cor laranja mais escura para o hover */
   }
 `;
+
 
 const Title = styled.h1`
   text-align: center;
@@ -134,12 +126,4 @@ const StatsTable = styled.table`
   tr:nth-child(even) {
     background-color: #f9f9f9;
   }
-`;
-
-const GridsStatsChartWrapper = styled.div`
-  margin-bottom: 30px;
-`;
-
-const StatsTableWrapper = styled.div`
-  overflow-x: auto;
 `;

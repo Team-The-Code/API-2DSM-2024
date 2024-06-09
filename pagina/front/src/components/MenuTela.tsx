@@ -1,14 +1,11 @@
-import { Link } from "react-router-dom";
+
 import styled from "styled-components";
 
-export default function MenuAdm() {
+export default function MenuTela() {
   return (
     <Sld>
       <ImgSld alt="" src="./logo-branca-completa.svg" />
-      <RightSld>
-        <Link to="/configuracoes">Configurações</Link>
-        <Link to="/logout">Logout</Link>
-      </RightSld>
+      <RightSld />
     </Sld>
   );
 }

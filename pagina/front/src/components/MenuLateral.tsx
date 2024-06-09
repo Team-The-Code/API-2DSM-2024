@@ -3,17 +3,38 @@ import styled from "styled-components";
 
 export default function MenuLateral() {
     return (
-      <Sld>
-        <Link to="/estatisticas">Estatísticas</Link>
-        <Link to="/usuarios">Usuários</Link>
-      </Sld>
-    );
+        <>
+        <Sld>
+          <nav className="menu-lateral">
+              <i className="bi bi-view-list"></i>
+            <ul>
+              <li className="item-menu">
+              <Link to="/estatisticas">Grades</Link>
+              </li>
+              <li className="item-menu">
+              <Link to="/estatisticas/mappingByProject">Mapeamento</Link>
+              </li>
+              <li className="item-menu">
+              <Link to="/estatisticas/pointersByProject">Apontamento por projeto</Link>
+              </li>
+              <li className="item-menu">
+              <Link to="/usuarios">Usuários</Link>
+              </li>
+              <li className="item-menu">
+              </li>
+              <li className="item-menu">
+              </li>
+            </ul>
+          </nav>
+          </Sld>
+        </>
+      );
   }
  export const Sld = styled.div`
   
 
 nav.menu-lateral {
-    width: 10vw;
+    width: 13vw;
     height: 100vh;
     background: #5e5e5e;
     position: fixed;
@@ -28,12 +49,14 @@ nav.menu-lateral {
 
 ul {
     list-style-type: none;
-    padding-left: 2px;
-    margin-top:13vh;
+    margin-top:16vh;
+    padding-left:10px
 }
 
 ul li.item-menu {
     transition: 0.2s;
+    padding:15px;
+
 }
 
 ul li.item-menu:hover {
@@ -43,25 +66,9 @@ ul li.item-menu:hover {
 ul li.item-menu a {
     color: #fff;
     text-decoration: none;
-    font-size: 2vw;
-    display: flex;
-   
-    
+    font-size: 1.9vw;
+    display: flex; 
 }
 
-ul li.item-menu a .txt-link {
-    background-size: cover;
-    margin: auto ;
-    margin-bottom: 4vh;
-    padding-left: 0.2vw;
-    font-size: 1.2vw;
-    padding-top:30px
-    
-}
-
-ul li.item-menu a .icon > i {
-    font-size: 2vw;
-    
-}
   `
   
