@@ -10,13 +10,16 @@ export interface LoginProps {
   profile: string;
   token: string;
 }
-
 export interface UserProps {
   id: number;
   mail: string;
   profile: string;
 }
-
+export interface Projects {
+  id:number;
+  nome: string;
+  tamanho: number;
+}
 export interface GridsByProjectProps {
   idproject: number;
   name: string;

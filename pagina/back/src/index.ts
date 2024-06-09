@@ -2,7 +2,6 @@ import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import routes from "./routes";
-import areaRouter from './routes/areaproject'
 import bodyParser from 'body-parser';
 dotenv.config();
 
@@ -18,7 +17,6 @@ app.use(express.json());
 app.use(cors());
 
 app.use(bodyParser.json());
-app.use('/api', areaRouter);
 
 // inicializa o servidor na porta especificada
 app.listen(PORT, () => {

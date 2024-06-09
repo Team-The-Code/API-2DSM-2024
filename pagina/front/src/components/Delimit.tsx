@@ -1,17 +1,24 @@
-import React, { useRef, useEffect } from 'react';
-import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
-import { MapContainer, TileLayer } from 'react-leaflet';
-import { FeatureGroup } from 'react-leaflet';
+import { MapContainer, TileLayer, FeatureGroup } from 'react-leaflet';
 import { EditControl } from 'react-leaflet-draw';
 import 'leaflet-draw/dist/leaflet.draw.css';
+import axios from 'axios';
 
 const DrawMap: React.FC = () => {
   const onCreated = (e: any) => {
     const { layerType, layer } = e;
     if (layerType === 'polygon') {
       const coordinates = layer.getLatLngs();
-      console.log('Polygon coordinates: ', coordinates);
+      console.log('polygonCoordinates: ', coordinates);
+
+      // Enviar as coordenadas para o servidor
+      axios.post('/projetos/create', { coordinates })
+        .then(response => {
+          console.log('Polygon saved successfully:', response.data);
+        })
+        .catch(error => {
+          console.error('Error saving polygon:', error);
+        });
     }
   };
 

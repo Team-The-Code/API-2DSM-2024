@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useUser } from "../hooks";
 import { ErrorBar } from "../components";
 import styled from "styled-components";
+import DrawMap from "../components/Delimit";
 
 export default function ConfigPage() {
   const { error, setError, users, getUsers, remove } = useUser();
@@ -17,7 +18,6 @@ export default function ConfigPage() {
   return (
     <>
       {error ? <ErrorBar>{error.erro}</ErrorBar> : null}
-
       <StyledContainer>
         <div>
           <h2>Usuários</h2>
