@@ -2,6 +2,10 @@ import { useEffect } from "react";
 import { useUser } from "../hooks";
 import { ErrorBar } from "../components";
 import styled from "styled-components";
+<<<<<<< HEAD
+=======
+
+>>>>>>> 87fa98dbaf18c3d154b4dde44f8fad7daa2695af
 
 export default function ConfigPage() {
   const { error, setError, users, getUsers, remove } = useUser();

@@ -1,9 +1,5 @@
 import { ReactNode } from "react";
 
-export interface ErrorProps {
-  erro: string;
-}
-
 export interface LoginProps {
   id: number;
   mail: string;
@@ -15,8 +11,9 @@ export interface UserProps {
   mail: string;
   profile: string;
 }
-export interface Projects {
-  id:number;
+
+export interface Project {
+  id: number;
   nome: string;
   tamanho: number;
   
@@ -30,6 +27,15 @@ export interface Grade{
   obs:string;
   area_km2:number
 }
+
+export interface Projects {
+  projects: Project[];
+}
+
+export interface ErrorProps {
+  erro: string;
+}
+
 export interface GridsByProjectProps {
   idproject: number;
   name: string;
