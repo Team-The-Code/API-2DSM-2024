@@ -1,13 +1,16 @@
-import { useEffect, useState } from "react";
+// src/pages/ProjectsPage.tsx
 
-import { Projetos } from "../services";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
-import { Projects } from "../types";
-import DrawMap from "../components/Delimit";
+import { Project } from "../types";
+import DrawMap from "../components/DrawMap";
+import Projetos from "../services/Projetos";
 
 const ProjectsPage: React.FC = () => {
-  const [projetos, setProjetos] = useState<Projects[]>([]);
+  const [projetos, setProjetos] = useState<Project[]>([]);
   const [error, setError] = useState<string | null>(null);
+
+  // Função para buscar a lista de projetos
 
   useEffect(() => {
     const fetchStats = async () => {
@@ -21,11 +24,13 @@ const ProjectsPage: React.FC = () => {
 
     fetchStats();
   }, []);
+  // Função para tratar o clique do botã
 
   return (
     <Container>
       <Title>Cadastrar Novo Projeto</Title>
       <DrawMap/>
+
       <Title>Projetos Cadastrados</Title>
       {error && <ErrorMessage>{error}</ErrorMessage>}
 
@@ -33,19 +38,21 @@ const ProjectsPage: React.FC = () => {
         <thead>
           <tr>
             <th>Numero do Projeto</th>
-            <th>Nome da Cidade</th>
-            <th>Area Total (km²)</th>
-            <th></th>
+            <th>Nome do Projeto</th>
+            <th>Área Total (km²)</th>
+            <th>Ação</th> {/* Adicionando o cabeçalho para a coluna de ação */}
           </tr>
         </thead>
         <tbody>
-          {projetos.map((projeto, index) => (
-            <tr key={index}>
-              <td>{projeto.id}</td>
-              <td>{projeto.nome}</td>
-              <td>{projeto.tamanho}</td>
+          {projetos.map((project) => (
+            <tr key={project.id}>
+              <td>{project.id}</td>
+              <td>{project.nome}</td>
+              <td>{project.tamanho}</td>
               <td>
-                <Button>Carregar Grade de {projeto.nome}</Button>
+                <Button>
+                  Carregar Grade de {project.nome}
+                </Button>
               </td>
             </tr>
           ))}
