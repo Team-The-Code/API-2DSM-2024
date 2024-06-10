@@ -1,6 +1,6 @@
 import React from 'react';
 import { Bar } from 'react-chartjs-2';
-import { PointersByProjectProps, PointersStatsChartProps } from '../types';
+import {  PointersStatsChartProps } from '../types';
 
 
 const PointersStatsChart: React.FC<PointersStatsChartProps> = ({ data }) => {

@@ -18,7 +18,7 @@ export default function MenuLateral() {
               <Link to="/estatisticas/pointersByProject">Apontamento por projeto</Link>
               </li>
               <li className="item-menu">
-                <Link to="/projetos/limitProjects">Projetos</Link>
+                <Link to="/projetos">Projetos</Link>
               </li>
               <li className="item-menu">
               <Link to="/usuarios">Usuários</Link>

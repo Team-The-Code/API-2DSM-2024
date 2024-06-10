@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import { MappingByProjectProps, ErrorProps } from '../types';
+import { MappingByProjectProps } from '../types';
 import { Stats } from '../services';
 import MappingStatsChart from '../components/MappingStatsChart';
 import html2pdf from 'html2pdf.js';

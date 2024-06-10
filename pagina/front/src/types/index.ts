@@ -19,6 +19,16 @@ export interface Projects {
   id:number;
   nome: string;
   tamanho: number;
+  
+}
+export interface Grade{
+  id:number;
+  user_revisor:number;
+  user_editor:number;
+  status:string;
+  status_val:string;
+  obs:string;
+  area_km2:number
 }
 export interface GridsByProjectProps {
   idproject: number;

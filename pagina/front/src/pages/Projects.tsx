@@ -1,13 +1,33 @@
 import { useEffect, useState } from "react";
-
 import { Projetos } from "../services";
 import styled from "styled-components";
 import { Projects } from "../types";
-import DrawMap from "../components/Delimit";
+// import { FeatureGroup, MapContainer, TileLayer } from "react-leaflet";
+// import { EditControl } from "react-leaflet-draw";
+// import api from "../services/api";
+import { Link } from "react-router-dom";
 
 const ProjectsPage: React.FC = () => {
   const [projetos, setProjetos] = useState<Projects[]>([]);
   const [error, setError] = useState<string | null>(null);
+  
+  // const onCreated = async (e: any) => {
+  //   const { layerType, layer } = e;
+  //   if (layerType === 'polygon') {
+  //     const coordinates = layer.getLatLngs()[0].map((coord: any) => [coord.lng, coord.lat]);
+  //     const geomGeoJSON = {
+  //       type: "Polygon",
+  //       coordinates: [coordinates]
+  //     };
+
+  //     try {
+  //       const response = await api.post('/projetos', { geom: geomGeoJSON });
+  //       console.log('Polygon saved successfully:', response.data);
+  //     } catch (error) {
+  //       console.error('Error saving polygon:', error);
+  //     }
+  //   }
+  // };
 
   useEffect(() => {
     const fetchStats = async () => {
@@ -18,14 +38,31 @@ const ProjectsPage: React.FC = () => {
         setProjetos(response);
       }
     };
-
     fetchStats();
   }, []);
 
   return (
     <Container>
-      <Title>Cadastrar Novo Projeto</Title>
-      <DrawMap/>
+      {/* <Title>Cadastrar Novo Projeto</Title>
+      <MapContainer center={[51.505, -0.09]} zoom={13} style={{ height: '500px', width: '100%' }}>
+        <TileLayer
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          attribution='&copy; OpenStreetMap contributors'
+        />
+        <FeatureGroup>
+          <EditControl
+            position="topright"
+            onCreated={onCreated}
+            draw={{
+              rectangle: false,
+              circle: false,
+              polyline: false,
+              circlemarker: false,
+              marker: false
+            }}
+          />
+        </FeatureGroup>
+      </MapContainer> */}
       <Title>Projetos Cadastrados</Title>
       {error && <ErrorMessage>{error}</ErrorMessage>}
 
@@ -45,7 +82,7 @@ const ProjectsPage: React.FC = () => {
               <td>{projeto.nome}</td>
               <td>{projeto.tamanho}</td>
               <td>
-                <Button>Carregar Grade de {projeto.nome}</Button>
+                <LinkStyled className="link" to={`/projetos/${projeto.nome}`}><Button>Carregar Grade de {projeto.nome}</Button></LinkStyled>
               </td>
             </tr>
           ))}
@@ -116,8 +153,12 @@ const Button = styled.button`
   justify-content: center;
   width: 100%;
   height: 100%;
+  
 
   &:hover {
     background-color: #e55d00;
   }
+`;
+const LinkStyled = styled(Link)`
+  text-decoration: none;
 `;

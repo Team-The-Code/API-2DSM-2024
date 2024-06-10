@@ -3,7 +3,7 @@ import LoginPage from "./LoginPage";
 import Logout from "./Logout";
 import StatsPage from "./StatsPage";
 import UserPage from "./UserPage";
-import ProjetoPage from "./NewProjects"
+import ProjetoPage from "./Projects"
 
 export {
     ConfigPage,
