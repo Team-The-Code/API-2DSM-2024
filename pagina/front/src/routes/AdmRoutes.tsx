@@ -21,7 +21,7 @@ export default function AdmRoutes() {
         <Route path="/estatisticas/mappingByProject" element={<MapsPage />} />
         <Route path="/estatisticas/pointersByProject" element={<PointPage />} />
         <Route path="/projetos" element={<ProjetoPage />} />
-        <Route path="/projetos/Taubaté" element={<GradeT/>} />
+        <Route path="/projetos/Taubate" element={<GradeT/>} />
         <Route path="/projetos/Atibaia" element={<GradeA/>} />
         <Route path="/projetos/Cruzeiro" element={<GradeC/>} />
         <Route path="/usuarios" element={<UserPage />} />

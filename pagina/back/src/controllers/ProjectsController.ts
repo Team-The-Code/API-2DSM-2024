@@ -78,48 +78,21 @@ class ProjectsController {
     
 
     public async gradeT(req: Request, res: Response): Promise<void> {
-        const resultadosPorPagina = 30;
-        // Extrai o número da página da query string, se não estiver presente assume a página 1
-        const pagina = parseInt(req.query.page as string, 10) || 1;
-
-        // Calcula o offset com base na página
-        const offset = (pagina - 1) * resultadosPorPagina;
-
-        // Consulta para obter os resultados paginados
         const response: any = await query(
             `
-        SELECT * FROM public.grids
-        WHERE idproject = 3
-        AND user_editor IS NOT NULL
-        LIMIT ${resultadosPorPagina} OFFSET ${offset}
-        `
-        );
-
-        // Consulta para obter o número total de resultados
-        const totalResponse: any = await query(
+             SELECT * FROM public.grids
+             where idproject = 3
+             and user_editor  is not null 
             `
-        SELECT COUNT(*) AS total FROM public.grids
-        WHERE idproject = 3
-        AND user_editor IS NOT NULL
-        `
         );
-
-        const totalResultados = totalResponse[0].total;
-
-        // Calcula o número total de páginas com base no número total de resultados e resultados por página
-        const totalPages = Math.ceil(totalResultados / resultadosPorPagina);
-
-        // Verifica se há resultados
         if (response && response.length > 0) {
-            res.json({
-                totalPages,
-                currentPage: pagina,
-                response
-            });
+            res.json(response);
+            console.log(response);
         } else {
             res.json({ erro: "Nenhum projeto encontrado." });
         }
     }
+    
 }
 
 export default new ProjectsController();

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Projetos } from "../services";
 import styled from "styled-components";
-import { Grade, Projects } from "../types";
+import { Grade } from "../types";
 
 
 const GradeA: React.FC = () => {
@@ -28,7 +28,6 @@ const GradeA: React.FC = () => {
       <StatsTable>
         <thead>
           <tr>
-            <th>id</th>
             <th>Responsável Grade</th>
             <th>Revisor</th>
             <th>Status Atual</th>
