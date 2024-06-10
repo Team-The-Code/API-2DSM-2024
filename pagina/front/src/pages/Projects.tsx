@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
 import { Projetos } from "../services";
 import styled from "styled-components";
-import { Projects } from "../types";
+import { Project } from "../types";
 // import { FeatureGroup, MapContainer, TileLayer } from "react-leaflet";
 // import { EditControl } from "react-leaflet-draw";
 // import api from "../services/api";
 import { Link } from "react-router-dom";
 
 const ProjectsPage: React.FC = () => {
-  const [projetos, setProjetos] = useState<Projects[]>([]);
+  const [projetos, setProjetos] = useState<Project[]>([]);
   const [error, setError] = useState<string | null>(null);
   
   // const onCreated = async (e: any) => {
