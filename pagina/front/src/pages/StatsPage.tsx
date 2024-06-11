@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import { GridsByProjectProps, ErrorProps } from '../types';
+import { GridsByProjectProps } from '../types';
 import { Stats } from '../services';
 import GridsStatsChart from '../components/GridsStatsChart';
 import html2pdf from 'html2pdf.js';
@@ -8,6 +8,7 @@ import html2pdf from 'html2pdf.js';
 const StatsPage: React.FC = () => {
   const [stats, setStats] = useState<GridsByProjectProps[]>([]);
   const [error, setError] = useState<string | null>(null);
+  const [sortConfig, setSortConfig] = useState<{ key: keyof GridsByProjectProps; direction: 'ascending' | 'descending' } | null>(null);
 
   useEffect(() => {
     const fetchStats = async () => {
@@ -36,6 +37,37 @@ const StatsPage: React.FC = () => {
     }
   };
 
+  const requestSort = (key: keyof GridsByProjectProps) => {
+    let direction: 'ascending' | 'descending' = 'ascending';
+    if (sortConfig && sortConfig.key === key && sortConfig.direction === 'ascending') {
+      direction = 'descending';
+    }
+    setSortConfig({ key, direction });
+  };
+
+  const sortedStats = React.useMemo(() => {
+    let sortableStats = [...stats];
+    if (sortConfig !== null) {
+      sortableStats.sort((a, b) => {
+        if (a[sortConfig.key] < b[sortConfig.key]) {
+          return sortConfig.direction === 'ascending' ? -1 : 1;
+        }
+        if (a[sortConfig.key] > b[sortConfig.key]) {
+          return sortConfig.direction === 'ascending' ? 1 : -1;
+        }
+        return 0;
+      });
+    }
+    return sortableStats;
+  }, [stats, sortConfig]);
+
+  const getSortIndicator = (key: keyof GridsByProjectProps) => {
+    if (sortConfig?.key === key) {
+      return sortConfig.direction === 'ascending' ? '▲' : '▼';
+    }
+    return null;
+  };
+
   return (
     <Container>
       <Title>Grades por Projeto</Title>
@@ -48,15 +80,15 @@ const StatsPage: React.FC = () => {
           <StatsTable>
             <thead>
               <tr>
-                <th>Nome do Projeto</th>
-                <th>Total de Grades</th>
-                <th>Grades Finalizadas</th>
-                <th>Área Total (km²)</th>
-                <th>Área Finalizada (km²)</th>
+                <th><button onClick={() => requestSort('name')}>Nome do Projeto {getSortIndicator('name')}</button></th>
+                <th><button onClick={() => requestSort('total_grids')}>Total de Grades {getSortIndicator('total_grids')}</button></th>
+                <th><button onClick={() => requestSort('finished_grids')}>Grades Finalizadas {getSortIndicator('finished_grids')}</button></th>
+                <th><button onClick={() => requestSort('total_area')}>Área Total (km²) {getSortIndicator('total_area')}</button></th>
+                <th><button onClick={() => requestSort('finished_area')}>Área Finalizada (km²) {getSortIndicator('finished_area')}</button></th>
               </tr>
             </thead>
             <tbody>
-              {stats.map((stat) => (
+              {sortedStats.map((stat) => (
                 <tr key={stat.idproject}>
                   <td>{stat.name}</td>
                   <td>{stat.total_grids}</td>
@@ -129,6 +161,21 @@ const StatsTable = styled.table`
   th {
     background-color: #f4f4f4;
     font-weight: bold;
+  }
+
+  th button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    color: inherit;
+    padding: 0;
+    text-align: center;
+    width: 100%;
+  }
+
+  th button:hover {
+    text-decoration: underline;
   }
 
   tr:nth-child(even) {

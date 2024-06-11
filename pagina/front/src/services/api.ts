@@ -36,5 +36,12 @@ api.interceptors.response.use(
   }
 );
 
+export const fetchProjects = async (token: string) => {
+  const response = await api.get('/projects', {
+    headers: { Authorization: token },
+  });
+  return response.data;
+};
+
 export default api;
 

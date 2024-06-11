@@ -5,10 +5,10 @@ import { Stats } from '../services';
 import PointersStatsChart from '../components/PointersStatsChart';
 import html2pdf from 'html2pdf.js';
 
-
 const PointersStatsPage: React.FC = () => {
   const [stats, setStats] = useState<PointersByProjectProps[]>([]);
   const [error, setError] = useState<string | null>(null);
+  const [sortConfig, setSortConfig] = useState<{ key: keyof PointersByProjectProps; direction: 'ascending' | 'descending' } | null>(null);
 
   useEffect(() => {
     const fetchStats = async () => {
@@ -22,6 +22,7 @@ const PointersStatsPage: React.FC = () => {
 
     fetchStats();
   }, []);
+
   const handlePrintContent = () => {
     const element = document.getElementById('printable-content');
     if (element) {
@@ -36,31 +37,61 @@ const PointersStatsPage: React.FC = () => {
     }
   };
 
+  const requestSort = (key: keyof PointersByProjectProps) => {
+    let direction: 'ascending' | 'descending' = 'ascending';
+    if (sortConfig && sortConfig.key === key && sortConfig.direction === 'ascending') {
+      direction = 'descending';
+    }
+    setSortConfig({ key, direction });
+  };
+
+  const sortedStats = React.useMemo(() => {
+    let sortableStats = [...stats];
+    if (sortConfig !== null) {
+      sortableStats.sort((a, b) => {
+        if (a[sortConfig.key] < b[sortConfig.key]) {
+          return sortConfig.direction === 'ascending' ? -1 : 1;
+        }
+        if (a[sortConfig.key] > b[sortConfig.key]) {
+          return sortConfig.direction === 'ascending' ? 1 : -1;
+        }
+        return 0;
+      });
+    }
+    return sortableStats;
+  }, [stats, sortConfig]);
+
+  const getSortIndicator = (key: keyof PointersByProjectProps) => {
+    if (sortConfig?.key === key) {
+      return sortConfig.direction === 'ascending' ? '▲' : '▼';
+    }
+    return null;
+  };
 
   return (
     <Container>
-    <Title>Estatísticas de Apontamentos por Projeto</Title>
-    {error && <ErrorMessage>{error}</ErrorMessage>}
-    {stats.length > 0 && <PointersStatsChart data={stats} />}
-    <StatsTable>
-      <thead>
-        <tr>
-          <th>Nome do Projeto</th>
-          <th>Quantidade de Apontamentos</th>
-          <th>Apontamentos Finalizados</th>
-        </tr>
-      </thead>
-      <tbody>
-        {stats.map((stat) => (
-          <tr key={stat.idproject}>
-            <td>{stat.name}</td>
-            <td>{stat.total_pointers}</td>
-            <td>{stat.finished_pointers}</td>
+      <Title>Estatísticas de Apontamentos por Projeto</Title>
+      {error && <ErrorMessage>{error}</ErrorMessage>}
+      {stats.length > 0 && <PointersStatsChart data={stats} />}
+      <StatsTable>
+        <thead>
+          <tr>
+            <th><button onClick={() => requestSort('name')}>Nome do Projeto {getSortIndicator('name')}</button></th>
+            <th><button onClick={() => requestSort('total_pointers')}>Quantidade de Apontamentos {getSortIndicator('total_pointers')}</button></th>
+            <th><button onClick={() => requestSort('finished_pointers')}>Apontamentos Finalizados {getSortIndicator('finished_pointers')}</button></th>
           </tr>
-        ))}
-      </tbody>
-    </StatsTable>
-    <div className="end_button">
+        </thead>
+        <tbody>
+          {sortedStats.map((stat) => (
+            <tr key={stat.idproject}>
+              <td>{stat.name}</td>
+              <td>{stat.total_pointers}</td>
+              <td>{stat.finished_pointers}</td>
+            </tr>
+          ))}
+        </tbody>
+      </StatsTable>
+      <div className="end_button">
         <section className="actions">
           <button onClick={handlePrintContent}>Imprimir Conteúdo</button>
         </section>
@@ -75,9 +106,9 @@ const Container = styled.div`
   padding: 20px;
   max-width: 900px;
   margin: 0 auto;
-  margin-left:18%;
-  margin-top:7%;
-    .actions button {
+  margin-left: 18%;
+  margin-top: 7%;
+  .actions button {
     background-color: #ff6900; /* Cor laranja */
     color: #fff;
     border: none;
@@ -93,7 +124,6 @@ const Container = styled.div`
     background-color: #ff8c00; /* Cor laranja mais escura para o hover */
   }
 `;
-
 
 const Title = styled.h1`
   text-align: center;
@@ -121,6 +151,21 @@ const StatsTable = styled.table`
   th {
     background-color: #f4f4f4;
     font-weight: bold;
+  }
+
+  th button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    color: inherit;
+    padding: 0;
+    text-align: center;
+    width: 100%;
+  }
+
+  th button:hover {
+    text-decoration: underline;
   }
 
   tr:nth-child(even) {
