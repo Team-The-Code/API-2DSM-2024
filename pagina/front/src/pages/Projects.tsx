@@ -3,7 +3,7 @@ import { Projetos } from "../services";
 import styled from "styled-components";
 import { Project } from "../types";
 import { Link } from "react-router-dom";
-import MapComponent from "../components/Mapa";
+// import MapComponent from "../components/Mapa";
 
 const ProjectsPage: React.FC = () => {
   const [projetos, setProjetos] = useState<Project[]>([]);
@@ -29,7 +29,7 @@ const ProjectsPage: React.FC = () => {
   return (
     <Container>
       <Title>Projetos Cadastrados</Title>
-      <MapComponent/>
+      {/* <MapComponent/> */}
       {error && <ErrorMessage>{error}</ErrorMessage>}
       <StatsTable>
         <thead>

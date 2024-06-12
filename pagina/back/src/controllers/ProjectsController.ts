@@ -1,6 +1,7 @@
 import { Request, Response } from "express";
 import query from "../database/connection";
-import wellknown from 'wellknown';
+import wkx from 'wkx'
+import proj4 from 'proj4';
 class ProjectsController {
   public async list(_: Request, res: Response): Promise<void> {
     const response: any = await query(
@@ -33,59 +34,44 @@ class ProjectsController {
     }
   }
 
-  public async gradeA(req: Request, res: Response): Promise<void> {
-    try {
-        const response: any = await query(
-            `
-            SELECT
-                geom as geom
-            FROM
-                public.grids
-            WHERE
-                idproject = 1
-                AND user_editor IS NOT NULL;
-            `
-        );
 
-        if (response && response.length > 0) {
-            // Converter cada WKB para pares de coordenadas lat/long
-            const dataWithCoordinates = response.map((row: any) => {
-                const geomString: string = row.geom;
-                const coordinates: number[][] = [];
-                
-                // Removendo o prefixo WKB e o tipo de geometria
-                const trimmedHex = geomString.slice(8);
-                
-                // Iterar através da string hexadecimal para extrair coordenadas
-                for (let i = 0; i < 9; i++) { // Iterar apenas 9 vezes (9 pares de coordenadas)
-                    const latHex: string = trimmedHex.slice(i * 32, i * 32 + 8);
-                    const lonHex: string = trimmedHex.slice(i * 32 + 8, i * 32 + 16);
-                    const lat: number = parseInt(latHex, 16) / 10000000; // Converter de hex para graus
-                    const lon: number = parseInt(lonHex, 16) / 10000000; // Converter de hex para graus
-                    coordinates.push([lat, lon]);
-                }
-                
-                return { ...row, coordinates };
-            });
+  
 
-            res.json(dataWithCoordinates);
-            console.log(dataWithCoordinates);
-        } else {
-            res.status(404).json({ error: "Nenhum projeto encontrado." }); // Mudança: Código de status 404 para indicar que nenhum projeto foi encontrado
-        }
-    } catch (error) {
-        console.error("Erro ao buscar dados:", error);
-        res.status(500).json({ error: "Erro ao buscar dados." });
+  public async gradeA(_: Request, res: Response): Promise<void> {
+    const response: any = await query(
+      `
+        SELECT 
+          distinct(user_editor) as responsavel
+
+,
+           count(status) as total,
+          count(CASE WHEN status = 'finalizado'THEN 1 END) as finalizados,
+          count(CASE WHEN status = 'andamento'THEN 1 END) as Andamento
+          from grids
+        where idproject = 1 and user_editor is not null group by user_editor;
+
+            `
+    );
+    if (response && response.length > 0) {
+      res.json(response);
+      console.log(response);
+    } else {
+      res.json({ erro: "Nenhum projeto encontrado." });
     }
-}
-
-
+  }
+  
   public async gradeC(req: Request, res: Response): Promise<void> {
     const response: any = await query(
       `
-             SELECT * FROM public.grids
-             where idproject = 2
-             and user_editor  is not null 
+              SELECT 
+          distinct(user_editor) as responsavel
+
+,
+           count(status) as total,
+          count(CASE WHEN status = 'finalizado'THEN 1 END) as finalizados,
+          count(CASE WHEN status = 'andamento'THEN 1 END) as Andamento
+          from grids
+        where idproject = 2 and user_editor is not null group by user_editor;
             `
     );
     if (response && response.length > 0) {
@@ -99,9 +85,15 @@ class ProjectsController {
   public async gradeT(_: Request, res: Response): Promise<void> {
     const response: any = await query(
       `
-             SELECT * FROM public.grids
-             where idproject = 3
-             and user_editor  is not null 
+             SELECT 
+          distinct(user_editor) as responsavel
+
+,
+           count(status) as total,
+          count(CASE WHEN status = 'finalizado'THEN 1 END) as finalizados,
+          count(CASE WHEN status = 'andamento'THEN 1 END) as Andamento
+          from grids
+        where idproject = 3 and user_editor is not null group by user_editor; 
             `
     );
     if (response && response.length > 0) {

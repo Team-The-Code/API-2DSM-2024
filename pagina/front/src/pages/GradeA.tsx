@@ -1,43 +1,58 @@
-
+import { useEffect, useState } from "react";
+import { Projetos } from "../services";
 import styled from "styled-components";
-import GradeMap from "../components/Mapa2";
+import { Grade } from "../types";
 
 
-const GradeA: React.FC = () => {
-  // const [projetos, setProjetos] = useState<Grade[]>([]);
-  
+
+const GradeC: React.FC = () => {
+  const [projetos, setProjetos] = useState<Grade[]>([]);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    const fetchStats = async () => {
+      const response = await Projetos.gradeA();
+      if ('erro' in response) {
+        setError(response.erro);
+      } else {
+        setProjetos(response);
+      }
+    };
+    fetchStats();
+  }, []);
 
   return (
     <Container>
       <Title>Grade de Atibaia</Title>
-      <GradeMap/>
-      {/* <StatsTable>
+      {error && <ErrorMessage>{error}</ErrorMessage>}
+      {/* <GradeMap/> */}
+      <StatsTable>
         <thead>
           <tr>
-            <th>Responsável Grade</th>
-            <th>Revisor</th>
-            <th>Status Atual</th>
-            <th>Status Validação (Revisor)</th>
-            <th>Area Total (km²)</th>
+          <th>Responsável Grade(Analista)</th>
+            <th>Total de Quadrados</th>
+            <th>Quadrados Finalizados</th>
+            <th>Quadrados Andamento</th>
+            
           </tr>
         </thead>
         <tbody>
           {projetos.map((projeto, index) => (
             <tr key={index}>
-              <td>{projeto.user_editor}</td>
-              <td>{projeto.user_revisor}</td>
-              <td>{projeto.status}</td>
-              <td>{projeto.status_val}</td>
-              <td>{projeto.area_km2}</td>
+              <td>{projeto.responsavel}</td>
+              <td>{projeto.total}</td>
+              <td>{projeto.finalizados}</td>
+              <td>{projeto.andamento}</td>
+              
             </tr>
           ))}
         </tbody>
-      </StatsTable> */}
+      </StatsTable>
     </Container>
   );
 };
 
-export default GradeA;
+export default GradeC;
 
 const Container = styled.div`
   padding: 20px;

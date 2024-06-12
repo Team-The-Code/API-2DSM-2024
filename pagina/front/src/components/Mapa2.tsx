@@ -1,66 +1,37 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
+import L from 'leaflet';
+import wellknown from 'wellknown';
 import 'leaflet/dist/leaflet.css';
-import { MapContainer, TileLayer, Polygon } from 'react-leaflet';
-import { FeatureGroup } from 'react-leaflet';
-import Projetos from '../services/Projetos';
-import { Quadrado, ErrorProps } from '../types';
-import { LatLngExpression } from 'leaflet';
-
-const isCoordinateValid = (coord: number[]): boolean => {
-  const [longitude, latitude] = coord;
-  return (
-    typeof longitude === 'number' &&
-    typeof latitude === 'number' &&
-    longitude >= -180 && longitude <= 180 &&
-    latitude >= -90 && latitude <= 90
-  );
-};
 
 const GradeMap: React.FC = () => {
-  const [error, setError] = useState<any | null>(null);
-  const [gradeData, setGradeData] = useState<Quadrado[] | ErrorProps>([]);
+  // Função para adicionar WKB ao mapa Leaflet
+  const addWKBToMap = (wkb: string, map: L.Map): void => {
+    // Converter WKB para GeoJSON
+    const geojson = wellknown.parse(wkb);
+
+    // Adicionar GeoJSON ao mapa Leaflet
+    L.geoJSON(geojson).addTo(map);
+  }
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await Projetos.gradeA();
-        if ('error' in response) {
-          setError(response.error);
-        } else {
-          setGradeData(response);
-        }
-      } catch (error) {
-        setError('Error fetching grade data.');
-      }
-    };
+    // Criar mapa Leaflet
+    const map = L.map('map').setView([67.06614946567275, -126.50690025425232], 15);
 
-    fetchData();
+    // Exemplo de WKB
+    const wkb = '0103000000010000000500000000000000000000000000000000000000000000000000000000000000000000000000F03F000000000000F03F';
+
+    // Adicionar um tile layer de exemplo
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+
+    // Adicionar WKB ao mapa
+    addWKBToMap(wkb, map);
   }, []);
 
-  const processCoordinates = (coordinates: number[][]) => {
-    return coordinates.filter(isCoordinateValid).map((coord: number[]) => {
-      return [coord[1], coord[0]] as LatLngExpression; // [latitude, longitude]
-    });
-  };
-
   return (
-    <MapContainer center={[0, 0]} zoom={10} style={{ height: '500px', width: '100%' }}>
-      <TileLayer
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-
-        attribution='&copy; OpenStreetMap contributors'
-      />
-      <FeatureGroup>
-        {error && <div>{error}</div>}
-        {Array.isArray(gradeData) && gradeData.map((item, index) => (
-          <Polygon
-            key={index}
-            positions={processCoordinates(item.coordinates)}
-          />
-        ))}
-      </FeatureGroup>
-    </MapContainer>
+    <div id="map" style={{ height: "400px", width: "100%" }}></div>
   );
-};
+}
 
 export default GradeMap;

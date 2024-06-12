@@ -20,17 +20,15 @@ export interface Project {
   
 }
 export interface Grade{
-  id:number;
-  user_revisor:number;
-  user_editor:number;
-  status:string;
-  status_val:string;
-  obs:string;
-  area_km2:number
+  responsavel:number;
+  total:string
+  finalizados:string;
+  andamento:string
+
 }
 export interface Quadrado {
-  wkb_geom_hex: string;
-  coordinates: number[][];
+  
+  geom: number[][][];
 }
 
 

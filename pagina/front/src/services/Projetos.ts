@@ -21,7 +21,7 @@ class Projectos {
       return { erro: error.message };
     }
   }
-  async gradeA(): Promise<Quadrado[]| ErrorProps> {
+  async gradeA(): Promise<Grade[]| ErrorProps> {
     try {
       const { data } = await api.get("/projetos/Atibaia");
       return data;
