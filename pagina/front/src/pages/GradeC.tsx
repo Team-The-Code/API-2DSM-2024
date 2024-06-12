@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Projetos } from "../services";
 import styled from "styled-components";
 import { Grade } from "../types";
+import GradeMap from "../components/Mapa2";
 
 
 const GradeC: React.FC = () => {
@@ -24,7 +25,7 @@ const GradeC: React.FC = () => {
     <Container>
       <Title>Grade de Cruzeiro</Title>
       {error && <ErrorMessage>{error}</ErrorMessage>}
-
+      <GradeMap/>
       <StatsTable>
         <thead>
           <tr>

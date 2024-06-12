@@ -1,4 +1,4 @@
-import { ErrorProps, Grade, Project, Projects } from "../types";
+import { ErrorProps, Grade, Project, Projects, Quadrado } from "../types";
 import api from "./api";
 
 class Projectos {
@@ -21,7 +21,7 @@ class Projectos {
       return { erro: error.message };
     }
   }
-  async gradeA(): Promise<Grade[] | ErrorProps> {
+  async gradeA(): Promise<Quadrado[]| ErrorProps> {
     try {
       const { data } = await api.get("/projetos/Atibaia");
       return data;
@@ -37,9 +37,9 @@ class Projectos {
       return { erro: error.message };
     }
   }
-  async create(): Promise<Projects[] | ErrorProps> {
+  async create(date:any): Promise<Projects[] | ErrorProps> {
     try {
-      const { data } = await api.post("/projetos");
+      const { data } = await api.post("/projetos",{date});
       return data;
     } catch (error: any) {
       return { erro: error.message };

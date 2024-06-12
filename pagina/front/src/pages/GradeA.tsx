@@ -1,31 +1,17 @@
-import { useEffect, useState } from "react";
-import { Projetos } from "../services";
+
 import styled from "styled-components";
-import { Grade } from "../types";
+import GradeMap from "../components/Mapa2";
 
 
 const GradeA: React.FC = () => {
-  const [projetos, setProjetos] = useState<Grade[]>([]);
-  const [error, setError] = useState<string | null>(null);
-
-  useEffect(() => {
-    const fetchStats = async () => {
-      const response = await Projetos.gradeA();
-      if ('erro' in response) {
-        setError(response.erro);
-      } else {
-        setProjetos(response);
-      }
-    };
-    fetchStats();
-  }, []);
+  // const [projetos, setProjetos] = useState<Grade[]>([]);
+  
 
   return (
     <Container>
       <Title>Grade de Atibaia</Title>
-      {error && <ErrorMessage>{error}</ErrorMessage>}
-
-      <StatsTable>
+      <GradeMap/>
+      {/* <StatsTable>
         <thead>
           <tr>
             <th>Responsável Grade</th>
@@ -46,7 +32,7 @@ const GradeA: React.FC = () => {
             </tr>
           ))}
         </tbody>
-      </StatsTable>
+      </StatsTable> */}
     </Container>
   );
 };

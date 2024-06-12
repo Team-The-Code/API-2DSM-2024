@@ -110,7 +110,7 @@ const ContainerSld = styled.div`
     background-color: #e55d00;
   }
 .top-bar {
-    background - color: #ABB8C3;
+    background-color: #ABB8C3;
     color: white;
     display: flex;
     align-items: center;
@@ -119,7 +119,7 @@ const ContainerSld = styled.div`
   }
 
 .bottom-bar {
-    background - color: #ABB8C3;
+    background-color: #ABB8C3;
     color: white;
     display: flex;
     align-items: center;
@@ -134,7 +134,7 @@ const ContainerSld = styled.div`
 }
 
 .button {
-    background - color: white;
+    background-color: white;
     color: black;
     border: 3px solid #FF6900;
     padding: 8px 16px;

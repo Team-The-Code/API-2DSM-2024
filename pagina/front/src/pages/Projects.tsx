@@ -2,10 +2,8 @@ import { useEffect, useState } from "react";
 import { Projetos } from "../services";
 import styled from "styled-components";
 import { Project } from "../types";
-// import { FeatureGroup, MapContainer, TileLayer } from "react-leaflet";
-// import { EditControl } from "react-leaflet-draw";
-// import api from "../services/api";
 import { Link } from "react-router-dom";
+import MapComponent from "../components/Mapa";
 
 const ProjectsPage: React.FC = () => {
   const [projetos, setProjetos] = useState<Project[]>([]);
@@ -13,7 +11,7 @@ const ProjectsPage: React.FC = () => {
   const removeAcentos = (str: string): string => {
     return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
   };
-  
+
 
   useEffect(() => {
     const fetchStats = async () => {
@@ -27,11 +25,12 @@ const ProjectsPage: React.FC = () => {
     fetchStats();
   }, []);
 
+
   return (
     <Container>
       <Title>Projetos Cadastrados</Title>
+      <MapComponent/>
       {error && <ErrorMessage>{error}</ErrorMessage>}
-
       <StatsTable>
         <thead>
           <tr>

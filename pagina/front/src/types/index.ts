@@ -16,6 +16,7 @@ export interface Project {
   id: number;
   nome: string;
   tamanho: number;
+  geom: string[];
   
 }
 export interface Grade{
@@ -27,6 +28,11 @@ export interface Grade{
   obs:string;
   area_km2:number
 }
+export interface Quadrado {
+  wkb_geom_hex: string;
+  coordinates: number[][];
+}
+
 
 export interface Projects {
   projects: Project[];
