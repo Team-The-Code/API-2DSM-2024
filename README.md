@@ -176,9 +176,11 @@ Consiste na criação de um sistema web, para manipulação de projetos de mapea
 |   **Total Story Point** | 57 |
 
 ### UML de Classe
+
 <img src="./docs/Umlclass.png">
 
 ### UML de Sequência
+
 <img src="./docs/UmlSequencia.jpeg">
 
 ## Burndown
