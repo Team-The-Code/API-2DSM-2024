@@ -24,6 +24,8 @@ const PointersStatsPage: React.FC = () => {
   }, []);
 
   const handlePrintContent = () => {
+    var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+        var screenHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
     const element = document.getElementById('printable-content');
     if (element) {
       const opt = {
@@ -31,7 +33,7 @@ const PointersStatsPage: React.FC = () => {
         filename: 'relatorio.pdf',
         image: { type: 'jpeg', quality: 1.0 },
         html2canvas: { scale: 2 },
-        jsPDF: { unit: 'px', format: 'a4', orientation: 'portrait' }
+        jsPDF: { unit: 'px', format: [screenWidth, screenHeight], orientation: 'portrait' }
       };
       html2pdf().from(element).set(opt).save();
     }

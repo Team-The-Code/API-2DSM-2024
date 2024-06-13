@@ -1,6 +1,10 @@
 import { Request, Response } from "express";
 import query from "../database/connection";
 import { tokenize } from "../middlewares";
+import { LRUCache } from "lru-cache";
+
+const sessionCache = new LRUCache<string, any>({ max: 100 }); 
+
 
 class UserController {
   public async login(req: Request, res: Response): Promise<void> {
@@ -11,6 +15,17 @@ class UserController {
     } else if (!password) {
       res.json({ erro: "Forneça a senha" });
     } else {
+      try {
+        const cacheKey = `${mail}:${password}`; 
+
+       
+        const cachedUser = sessionCache.get(cacheKey);
+        if (cachedUser) {
+          console.log("Usuário recuperado do cache:", cachedUser);
+          res.json({ ...cachedUser, token: tokenize(cachedUser) });
+          return;
+        }
+
       const response: any = await query(
         `SELECT id, mail, profile 
           FROM users 
@@ -20,12 +35,21 @@ class UserController {
 
       if (response.length > 0) {
         const [object] = response;
+        console.log("Usuário recuperado do banco de dados:", object);
+        sessionCache.set(cacheKey, object);
+          console.log("Dados do usuário adicionados ao cache");
         res.json({ ...object, token: tokenize(object) });
       } else {
         res.json({ erro: "Dados de login não conferem" });
       }
+      }
+      catch (error) {
+        console.error("Erro ao fazer login:", error);
+        res.status(500).json({ error: "Erro interno do servidor" });
+      }
     }
   }
+
 
   public async create(req: Request, res: Response): Promise<void> {
     const { mail, password, profile } = req.body;

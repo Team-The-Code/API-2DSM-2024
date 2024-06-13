@@ -1,10 +1,23 @@
 import { Request, Response } from "express";
 import query from "../database/connection";
+import { LRUCache } from "lru-cache";
+
+const sessionCache = new LRUCache<string, any>({ max: 100 }); // Instancie o LRUCache
 
 class StatsController {
   // Quantidade de grades por projeto, quantidade de grades finalizadas no projeto,
   // área do projeto e área das grades finalizadas do projeto 
   public async gridsByProject(_: Request, res: Response): Promise<void> {
+    try {
+      const cacheKey = "gridsByProject"; 
+
+
+      const cachedResult = sessionCache.get(cacheKey);
+      if (cachedResult) {
+        console.log("Resultado recuperado do cache:", cachedResult);
+        res.json(cachedResult);
+        return;
+      }
     const response: any = await query(
       `
       SELECT 
@@ -39,13 +52,24 @@ class StatsController {
     );
 
     if (response.length > 0) {
+      console.log("Resultado da consulta:", response);
+
+      sessionCache.set(cacheKey, response);
+      console.log("Resultado adicionado ao cache");
       res.json(response);
     } else {
-      res.json({ erro: response.message });
+      console.log("Nenhum resultado encontrado");
+      res.json({ erro: "Nenhum resultado encontrado" });
+    }
+  }
+    catch (error) {
+      
+      console.error("Erro ao buscar dados:", error);
+      res.status(500).json({ error: "Erro interno do servidor" });
+    
     }
   }
 
-  // Quantidade de mapeamentos (changes) por projeto 
   public async mappingByProject(_: Request, res: Response): Promise<void> {
     const response: any = await query(
       `
