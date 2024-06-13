@@ -112,6 +112,8 @@ class ProjectsController {
     );
     res.json(response.rows);
   }
+
+  
 }
 
 export default new ProjectsController();

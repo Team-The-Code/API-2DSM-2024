@@ -4,7 +4,7 @@ import user from "./user";
 import { checkAdm, validadeAcess } from "../middlewares";
 import stats from "./stats";
 import projects from "./projects";
-import ProjectsController from "../controllers/ProjectsController";
+import editor from "./editor";
 
 const routes = Router();
 
@@ -14,7 +14,7 @@ routes.use("/usuario", validadeAcess, user);
 routes.use("/estatisticas", validadeAcess, checkAdm, stats);
 routes.use("/projetos",validadeAcess,checkAdm,projects )
 
-routes.get('/editor', validadeAcess, ProjectsController.getProjects);
+routes.use("/editor", validadeAcess, editor);
 //aceita qualquer método HTTP ou URL
 routes.use( (_:Request,res:Response) => res.json({error:"Requisição desconhecida"}) );
 

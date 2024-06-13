@@ -94,10 +94,26 @@ export interface ProjectStats {
 }
 export interface BarChartProps {
   data: MappingByProjectProps[];
+  
 }
 export interface GridsStatsChartProps {
   data: GridsByProjectProps[];
 }
 export interface PointersStatsChartProps {
   data: PointersByProjectProps[];
+}
+export interface EditorChartProps {
+  data: EditorProps[]; 
+}
+
+export interface EditorProps {
+  idproject: number,
+  name: string,
+  total_grids: number,
+  finished_grids: number,
+  validated_grids: number,
+  finished_area: number,
+  total_area: number,
+  editor_id: number,
+  finish_count: number
 }
