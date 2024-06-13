@@ -82,6 +82,39 @@ class EditorController {
       res.status(500).json({ erro: "Ocorreu um erro ao processar a solicitação." });
     }
   }
+  public async listRev(_: Request, res: Response): Promise<void> {
+    const { id } = res.locals;
+    console.log(id) // Presumo que res.locals contém o id do projeto
+    try {
+      const response: any = await query(
+        `
+    
+       
+SELECT 
+    a.user_revisor,
+    SUM(CASE WHEN a.status_val = 'finalizado' THEN 1 ELSE 0 END) AS validated_count, -- contagem de projetos validados
+    SUM(CASE WHEN a.status_val = 'andamento' THEN 1 ELSE 0 END) AS in_progress_count -- contagem de projetos em andamento
+FROM 
+    grids AS a
+	WHERE user_revisor = $1
+GROUP BY 
+    a.user_revisor
+
+        `,
+        [id]
+      );
+
+      if (response && response.length > 0) {
+        res.json(response);
+        console.log(response);
+      } else {
+        res.json({ erro: "Nenhum projeto encontrado." });
+      }
+    } catch (error) {
+      console.error("Erro ao listar projetos:", error);
+      res.status(500).json({ erro: "Ocorreu um erro ao processar a solicitação." });
+    }
+  }
 }
 
 export default new EditorController();

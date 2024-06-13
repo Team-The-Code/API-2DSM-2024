@@ -15,6 +15,7 @@ routes.use("/estatisticas", validadeAcess, checkAdm, stats);
 routes.use("/projetos",validadeAcess,checkAdm,projects )
 
 routes.use("/editor", validadeAcess, editor);
+routes.use("/revisor", validadeAcess, editor);
 //aceita qualquer método HTTP ou URL
 routes.use( (_:Request,res:Response) => res.json({error:"Requisição desconhecida"}) );
 

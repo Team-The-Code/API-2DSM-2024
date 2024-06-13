@@ -1,4 +1,4 @@
-import { EditorProps, ErrorProps } from "../types";
+import { EditorProps, ErrorProps, RevisorProps } from "../types";
 import api from "./api";
 
 class Editor {
@@ -8,6 +8,14 @@ class Editor {
   async tarefaEditor(): Promise<EditorProps[] | ErrorProps> {
     try {
       const { data } = await api.get("/editor");
+      return data;
+    } catch (error: any) {
+      return { erro: error.message };
+    }
+  }
+  async tarefaRevisor(): Promise<RevisorProps[] | ErrorProps> {
+    try {
+      const { data } = await api.get("/revisor");
       return data;
     } catch (error: any) {
       return { erro: error.message };

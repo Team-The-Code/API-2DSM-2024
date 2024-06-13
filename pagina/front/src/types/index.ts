@@ -117,3 +117,11 @@ export interface EditorProps {
   editor_id: number,
   finish_count: number
 }
+export interface RevisorProps {
+ user_revisor:  any |null | undefined;
+ validated_count:number;
+ in_progress_count:number;
+}
+export interface RevisorChartProps{
+  data: RevisorProps[]; 
+}
