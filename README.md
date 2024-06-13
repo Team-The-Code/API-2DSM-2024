@@ -7,7 +7,6 @@
     <a href="#entregas">Entregas</a> | 
     <a href="#backlogs">Backlogs</a> |  
     <a href="#tecnologias">Tecnologias</a> | 
-    <a href="#burndown">Burndown</a> | 
     <a href="#equipe">Equipe</a>
 </p>
 <span id="objetivo"></span>
@@ -139,7 +138,7 @@ Consiste na criação de um sistema web, para manipulação de projetos de mapea
 |   Tarefas  |         Story Point         |
 :-------------------------:|:-----:|
 | **Utilização de middleware para validar rotas**| 06 |
-|**Consultas Sql para filtrar por editor**| 04 |
+|**Consultas SQL para filtrar por editor**| 04 |
 |**Organização do código que faz o CRUD em classes** | 03 |
 | **Agrupar o código em pacotes e módulos** | 02 |
 | **Aplicar técnicas para otimização de algoritmos** | 06 |
@@ -149,6 +148,46 @@ Consiste na criação de um sistema web, para manipulação de projetos de mapea
 
 ## Burndown
 <img src="./docs/Burndown2.png">
+
+ <span id="sprint_3"></span>
+
+### Sprint 3 
+| Item | Funcionalidade             |
+| :--: | :------------------------------------------------------- |
+|  01  |**1.Carregar o limite de um novo projeto (carregar o limite do projeto)**   |
+|  02  |**2.Carregar a grade de retângulos de um novo projeto**|
+|  03  |**3.Gerenciamento de perfis, somente o usuário gestor poderá acessar os dados**|
+|  04  |**4.Utilização de middleware para validar as rotas**|
+
+
+### Tarefas na Sprint 
+|   Tarefas  |         Story Point         |
+:-------------------------:|:-----:|
+| **Algoritmos de ordenação**| 03 |
+|**Consulta SQL para gerar estatística de quantidade de polígonos mapeados, quantidade de correções e de área de polígonos mapeados, quantidade de correções e de área de polígonos mapeados por editor**| 04 |
+|**Carregar o limite de um novo projeto** | 09 |
+| **Carregar a grade de retângulo de um novo projeto (Carregar o limite do projeto)** | 09 |
+| **Diagrama UML de classes** | 06 |
+| **Gerenciamento de perfis, somente o usuário gestor poderá acessar os dados**| 05 |
+| **Utilização adequada de Gráficos cartesianos no desenvolvimento de sistemas e/ou gerenciamento de projeto**| 06 |
+| **Utilização de middleware para validar as rotas**| 06 |
+| **Otimização de algoritmos com utilização de memória cache**| 09 |
+|||
+|   **Total Story Point** | 57 |
+
+<!-- ### UML de Classe
+<img src="./docs/Uml.jpeg"> -->
+
+## Burndown
+<img src="./docs/Burndown3.png">
+
+## Retrospectiva da Sprint 3
+|O que funcionou bem| O que poderia melhorar|
+|:-----------------:|:---------------------:|
+| **Atender aos requisitos da cliente;**|**Aproveitamento do tempo;**|
+| **Conseguimos cumprir com nossas Tarefas;**|**Entendimento do Projeto.**|
+|**Comprometimento da Equipe;** |**Aproveitamento do tempo;** |
+
 
 <span id="tecnologias"></span>
 
@@ -167,5 +206,7 @@ Consiste na criação de um sistema web, para manipulação de projetos de mapea
 | :----------: | :-----------------------|:------------------------------------------: |
 |   Product Owner| Vitor Cezar de Souza|[GitHub](https://github.com/vooshybee)|
 |   Scrum Master| Ana Júlia Tette Lopes Afonso |[GitHub](https://github.com/AnaBarbancho)|
-|   Dev Team|  Paulo Alexandre Bueno|[Github](https://github.com/pauloabueno23)|
+|   Dev Team|  André Flávio de Oliveira|[Github](https://github.com/andreflavio)|
 |   Dev Team|  Marcelly Cristini Santos de Souza|[GitHub](https://github.com/Marcelly-cris)|
+|   Dev Team|  Mauro do Prado Santos|[GitHub](https://github.com/omaurosantos)|
+|   Dev Team|  Samuel Lucas Vieira de Melo|[GitHub](https://github.com/SamuelLucasVieira)|
