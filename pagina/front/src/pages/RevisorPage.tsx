@@ -28,18 +28,20 @@ const RevisorPage: React.FC = () => {
     }, []);
 
     const handlePrintContent = () => {
-        const element = document.getElementById('printable-content');
-        if (element) {
-            const opt = {
-                margin: 1,
-                filename: 'relatorio.pdf',
-                image: { type: 'jpeg', quality: 1.0 },
-                html2canvas: { scale: 2 },
-                jsPDF: { unit: 'px', format: 'a4', orientation: 'portrait' }
-            };
-            html2pdf().from(element).set(opt).save();
-        }
-    };
+        var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+        var screenHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+    const element = document.getElementById('printable-content');
+    if (element) {
+      const opt = {
+        margin: 1,
+        filename: 'relatorioMapeamentoRevisor.pdf',
+        image: { type: 'jpeg', quality: 2 },
+        html2canvas: { scale: 5 },
+        jsPDF: { unit: 'px', format: [screenWidth, screenHeight], orientation: 'portrait' }
+      };
+      html2pdf().from(element).set(opt).save();
+    }
+  };
 
     const requestSort = (key: keyof RevisorProps) => {
         let direction: 'ascending' | 'descending' = 'ascending';
@@ -71,6 +73,7 @@ const RevisorPage: React.FC = () => {
 
     return (
         <Container>
+            <div id="printable-content">
             <Title>Mapeamento por Projeto</Title>
             {error && <ErrorMessage>{error}</ErrorMessage>}
             {revisor1.length > 0 && <RevisorChart data={revisor1} />}
@@ -99,6 +102,7 @@ const RevisorPage: React.FC = () => {
                         ))}
                     </tbody>
                 </RevisorTable>
+                </div>
             </div>
             <div className="end_button">
                 <section className="actions">

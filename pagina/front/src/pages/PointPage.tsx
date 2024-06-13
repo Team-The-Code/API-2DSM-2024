@@ -30,7 +30,7 @@ const PointersStatsPage: React.FC = () => {
     if (element) {
       const opt = {
         margin: 1,
-        filename: 'relatorio.pdf',
+        filename: 'relatorioApontamento.pdf',
         image: { type: 'jpeg', quality: 1.0 },
         html2canvas: { scale: 2 },
         jsPDF: { unit: 'px', format: [screenWidth, screenHeight], orientation: 'portrait' }
@@ -72,6 +72,7 @@ const PointersStatsPage: React.FC = () => {
 
   return (
     <Container>
+       <div id="printable-content">
       <Title>Estatísticas de Apontamentos por Projeto</Title>
       {error && <ErrorMessage>{error}</ErrorMessage>}
       {stats.length > 0 && <PointersStatsChart data={stats} />}
@@ -93,6 +94,7 @@ const PointersStatsPage: React.FC = () => {
           ))}
         </tbody>
       </StatsTable>
+      </div>
       <div className="end_button">
         <section className="actions">
           <button onClick={handlePrintContent}>Imprimir Conteúdo</button>

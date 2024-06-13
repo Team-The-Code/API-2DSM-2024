@@ -24,18 +24,20 @@ const EditorsPage: React.FC = () => {
     }, []);
 
     const handlePrintContent = () => {
-        const element = document.getElementById('printable-content');
-        if (element) {
-            const opt = {
-                margin: 1,
-                filename: 'relatorio.pdf',
-                image: { type: 'jpeg', quality: 1.0 },
-                html2canvas: { scale: 2 },
-                jsPDF: { unit: 'px', format: 'a4', orientation: 'portrait' }
-            };
-            html2pdf().from(element).set(opt).save();
-        }
-    };
+        var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+        var screenHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+    const element = document.getElementById('printable-content');
+    if (element) {
+      const opt = {
+        margin: 1,
+        filename: 'relatorioMapeamentoEditor.pdf',
+        image: { type: 'jpeg', quality: 2 },
+        html2canvas: { scale: 5 },
+        jsPDF: { unit: 'px', format: [screenWidth, screenHeight], orientation: 'portrait' }
+      };
+      html2pdf().from(element).set(opt).save();
+    }
+  };
 
     const requestSort = (key: keyof EditorProps) => {
         let direction: 'ascending' | 'descending' = 'ascending';
@@ -70,6 +72,7 @@ const EditorsPage: React.FC = () => {
 
     return (
         <Container>
+             <div id="printable-content">
             <Title>Mapeamento por Projeto</Title>
             {error && <ErrorMessage>{error}</ErrorMessage>}
             {editor1.length > 0 && <EditorChart data={editor1} />}
@@ -133,6 +136,7 @@ const EditorsPage: React.FC = () => {
                     ))}
                 </tbody>
             </EditorTable>
+            </div>
             <div className="end_button">
                 <section className="actions">
                     <button onClick={handlePrintContent}>Imprimir Conteúdo</button>

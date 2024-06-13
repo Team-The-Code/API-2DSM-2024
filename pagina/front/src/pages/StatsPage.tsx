@@ -30,7 +30,7 @@ const StatsPage: React.FC = () => {
     if (element) {
       const opt = {
         margin: 1,
-        filename: 'relatorio.pdf',
+        filename: 'relatorioGrade.pdf',
         image: { type: 'jpeg', quality: 1.0 },
         html2canvas: { scale: 2 },
         jsPDF: { unit: 'px', format: [screenWidth, screenHeight], orientation: 'portrait' }
@@ -72,8 +72,8 @@ const StatsPage: React.FC = () => {
 
   return (
     <Container>
-      <Title>Grades por Projeto</Title>
       <div id="printable-content">
+      <Title>Grades por Projeto</Title>
         <GridsStatsChartWrapper>
           {error && <ErrorMessage>{error}</ErrorMessage>}
           {stats.length > 0 && <GridsStatsChart data={stats} />}

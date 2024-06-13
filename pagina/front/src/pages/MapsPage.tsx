@@ -24,18 +24,20 @@ const MappingStatsPage: React.FC = () => {
     }, []);
 
     const handlePrintContent = () => {
+            var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+            var screenHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
         const element = document.getElementById('printable-content');
         if (element) {
-            const opt = {
-                margin: 1,
-                filename: 'relatorio.pdf',
-                image: { type: 'jpeg', quality: 1.0 },
-                html2canvas: { scale: 2 },
-                jsPDF: { unit: 'px', format: 'a4', orientation: 'portrait' }
-            };
-            html2pdf().from(element).set(opt).save();
+          const opt = {
+            margin: 1,
+            filename: 'relatorioMapeamento.pdf',
+            image: { type: 'jpeg', quality: 2 },
+            html2canvas: { scale: 5 },
+            jsPDF: { unit: 'px', format: [screenWidth, screenHeight], orientation: 'portrait' }
+          };
+          html2pdf().from(element).set(opt).save();
         }
-    };
+      };
 
     const requestSort = (key: keyof MappingByProjectProps) => {
         let direction: 'ascending' | 'descending' = 'ascending';
@@ -70,9 +72,11 @@ const MappingStatsPage: React.FC = () => {
 
     return (
         <Container>
+            <div id="printable-content">
             <Title>Mapeamento por Projeto</Title>
             {error && <ErrorMessage>{error}</ErrorMessage>}
             {stats.length > 0 && <MappingStatsChart data={stats} />}
+            
             <StatsTable>
                 <thead>
                     <tr>
@@ -103,6 +107,7 @@ const MappingStatsPage: React.FC = () => {
                     ))}
                 </tbody>
             </StatsTable>
+            </div>
             <div className="end_button">
                 <section className="actions">
                     <button onClick={handlePrintContent}>Imprimir Conteúdo</button>
