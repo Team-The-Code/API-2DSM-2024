@@ -96,9 +96,10 @@ SELECT
     SUM(CASE WHEN a.status_val = 'andamento' THEN 1 ELSE 0 END) AS in_progress_count -- contagem de projetos em andamento
 FROM 
     grids AS a
-	WHERE user_revisor = $1
 GROUP BY 
     a.user_revisor
+ORDER BY 
+ a.user_revisor;
 
         `,
         [id]
